@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Sitemap: https://rentrovio.com/sitemap.xml
+
+# Specific directives for landing page sections
+Allow: /#features
+Allow: /#user-roles
+Allow: /#pricing
+Allow: /#contact
+Allow: /#about
+
+# Rate limiting to prevent server overload
+Crawl-delay: 1
