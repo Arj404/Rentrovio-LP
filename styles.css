@@ -386,7 +386,7 @@ body {
 }
 
 .hero__title {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.5rem, 3vw, 3rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: var(--spacing-6);
@@ -1443,7 +1443,7 @@ body {
   }
   
   .hero__title {
-    font-size: clamp(3rem, 6vw, 6rem);
+    font-size: clamp(2rem, 4vw, 4rem);
   }
   
   .beta-signup-form__input-group {
