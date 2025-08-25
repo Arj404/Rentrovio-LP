@@ -124,27 +124,57 @@ RentrovioLanding.HeaderComponent = {
     if (this.elements.mobileToggle) {
       this.elements.mobileToggle.addEventListener('click', this.toggleMobileMenu.bind(this));
     }
+    
+    // Close mobile menu when clicking navigation links
+    if (this.elements.navigation) {
+      this.elements.navigation.addEventListener('click', (e) => {
+        if (e.target.matches('.header__nav-link') && RentrovioLanding.state.isMobileMenuOpen) {
+          this.toggleMobileMenu();
+        }
+      });
+    }
+    
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && RentrovioLanding.state.isMobileMenuOpen) {
+        this.toggleMobileMenu();
+        this.elements.mobileToggle.focus();
+      }
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (RentrovioLanding.state.isMobileMenuOpen && 
+          !this.elements.navigation.contains(e.target) && 
+          !this.elements.mobileToggle.contains(e.target)) {
+        this.toggleMobileMenu();
+      }
+    });
   },
   
   toggleMobileMenu: function() {
     RentrovioLanding.state.isMobileMenuOpen = !RentrovioLanding.state.isMobileMenuOpen;
     
-    // Toggle navigation visibility
-    this.elements.navigation.style.display = 
-      RentrovioLanding.state.isMobileMenuOpen ? 'block' : 'none';
+    // Toggle navigation visibility with CSS classes
+    this.elements.navigation.classList.toggle('active', RentrovioLanding.state.isMobileMenuOpen);
     
-    // Toggle hamburger animation
-    const hamburgers = this.elements.mobileToggle.querySelectorAll('.hamburger');
-    hamburgers.forEach((line, index) => {
-      if (RentrovioLanding.state.isMobileMenuOpen) {
-        if (index === 0) line.style.transform = 'rotate(45deg) translate(6px, 6px)';
-        if (index === 1) line.style.opacity = '0';
-        if (index === 2) line.style.transform = 'rotate(-45deg) translate(6px, -6px)';
-      } else {
-        line.style.transform = 'none';
-        line.style.opacity = '1';
+    // Update ARIA attributes for accessibility
+    this.elements.mobileToggle.setAttribute('aria-expanded', RentrovioLanding.state.isMobileMenuOpen);
+    
+    // Toggle hamburger animation class
+    this.elements.mobileToggle.classList.toggle('active', RentrovioLanding.state.isMobileMenuOpen);
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = RentrovioLanding.state.isMobileMenuOpen ? 'hidden' : '';
+    
+    // Focus management for accessibility
+    if (RentrovioLanding.state.isMobileMenuOpen) {
+      // Focus first navigation link when menu opens
+      const firstNavLink = this.elements.navigation.querySelector('.header__nav-link');
+      if (firstNavLink) {
+        setTimeout(() => firstNavLink.focus(), 100);
       }
-    });
+    }
   },
   
   setupScrollListener: function() {
