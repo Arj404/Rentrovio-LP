@@ -123,6 +123,12 @@ RentrovioLanding.HeaderComponent = {
   bindEvents: function() {
     if (this.elements.mobileToggle) {
       this.elements.mobileToggle.addEventListener('click', this.toggleMobileMenu.bind(this));
+      
+      // Enhanced touch support
+      this.elements.mobileToggle.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        this.toggleMobileMenu();
+      }, { passive: false });
     }
     
     // Close mobile menu when clicking navigation links
@@ -142,7 +148,7 @@ RentrovioLanding.HeaderComponent = {
       }
     });
     
-    // Close mobile menu when clicking outside
+    // Enhanced outside click detection
     document.addEventListener('click', (e) => {
       if (RentrovioLanding.state.isMobileMenuOpen && 
           !this.elements.navigation.contains(e.target) && 
@@ -150,30 +156,65 @@ RentrovioLanding.HeaderComponent = {
         this.toggleMobileMenu();
       }
     });
+    
+    // Handle resize to close mobile menu on desktop
+    window.addEventListener('resize', this.handleResize.bind(this));
   },
   
   toggleMobileMenu: function() {
-    RentrovioLanding.state.isMobileMenuOpen = !RentrovioLanding.state.isMobileMenuOpen;
+    const isOpen = RentrovioLanding.state.isMobileMenuOpen;
+    const newState = !isOpen;
     
-    // Toggle navigation visibility with CSS classes
-    this.elements.navigation.classList.toggle('active', RentrovioLanding.state.isMobileMenuOpen);
+    // Update state
+    RentrovioLanding.state.isMobileMenuOpen = newState;
+    
+    // Handle navigation display
+    if (newState) {
+      // Show menu
+      this.elements.navigation.style.display = 'block';
+      // Force reflow before adding active class for smooth animation
+      this.elements.navigation.offsetHeight;
+      this.elements.navigation.classList.add('active');
+    } else {
+      // Hide menu
+      this.elements.navigation.classList.remove('active');
+      // Hide after transition completes
+      setTimeout(() => {
+        if (!RentrovioLanding.state.isMobileMenuOpen) {
+          this.elements.navigation.style.display = 'none';
+        }
+      }, 300);
+    }
     
     // Update ARIA attributes for accessibility
-    this.elements.mobileToggle.setAttribute('aria-expanded', RentrovioLanding.state.isMobileMenuOpen);
+    this.elements.mobileToggle.setAttribute('aria-expanded', newState);
     
     // Toggle hamburger animation class
-    this.elements.mobileToggle.classList.toggle('active', RentrovioLanding.state.isMobileMenuOpen);
+    this.elements.mobileToggle.classList.toggle('active', newState);
     
     // Prevent body scroll when menu is open
-    document.body.style.overflow = RentrovioLanding.state.isMobileMenuOpen ? 'hidden' : '';
+    document.body.style.overflow = newState ? 'hidden' : '';
     
     // Focus management for accessibility
-    if (RentrovioLanding.state.isMobileMenuOpen) {
+    if (newState) {
       // Focus first navigation link when menu opens
       const firstNavLink = this.elements.navigation.querySelector('.header__nav-link');
       if (firstNavLink) {
         setTimeout(() => firstNavLink.focus(), 100);
       }
+    }
+  },
+  
+  handleResize: function() {
+    // Close mobile menu when resizing to desktop
+    if (window.innerWidth >= 768 && RentrovioLanding.state.isMobileMenuOpen) {
+      RentrovioLanding.state.isMobileMenuOpen = false;
+      this.elements.navigation.classList.remove('active');
+      this.elements.mobileToggle.classList.remove('active');
+      this.elements.mobileToggle.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+      // Reset navigation display for desktop
+      this.elements.navigation.style.display = '';
     }
   },
   
