@@ -33,6 +33,9 @@
                             <a href="#pricing" class="header__nav-link">Pricing</a>
                         </li>
                         <li class="header__nav-item">
+                            <a href="#contact" class="header__nav-link">Contact</a>
+                        </li>
+                        <li class="header__nav-item">
                             <a href="#about" class="header__nav-link">About</a>
                         </li>
                     </ul>
@@ -446,6 +449,151 @@
         </div>
     </section>
 
+    <!-- Contact Us Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-description">
+                    Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-info-card">
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <span>📧</span>
+                            </div>
+                            <div class="contact-item__content">
+                                <h3 class="contact-item__title">Email Us</h3>
+                                <p class="contact-item__text">rentrovio@gmail.com</p>
+                                <a href="mailto:rentrovio@gmail.com" class="contact-item__link">Send an email</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <span>⏰</span>
+                            </div>
+                            <div class="contact-item__content">
+                                <h3 class="contact-item__title">Response Time</h3>
+                                <p class="contact-item__text">Within 24 hours</p>
+                                <p class="contact-item__subtext">We're committed to quick responses</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <span>🎯</span>
+                            </div>
+                            <div class="contact-item__content">
+                                <h3 class="contact-item__title">Beta Program</h3>
+                                <p class="contact-item__text">Join our waitlist</p>
+                                <p class="contact-item__subtext">Be first to access new features</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName" class="form-label">Full Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="contactName" 
+                                    name="name" 
+                                    class="form-input" 
+                                    placeholder="Enter your full name"
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactEmail" class="form-label">Email Address *</label>
+                                <input 
+                                    type="email" 
+                                    id="contactEmail" 
+                                    name="email" 
+                                    class="form-input" 
+                                    placeholder="Enter your email address"
+                                    required
+                                >
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactSubject" class="form-label">Subject *</label>
+                                <select id="contactSubject" name="subject" class="form-select" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Beta Access Request">Beta Access Request</option>
+                                    <option value="Partnership Opportunity">Partnership Opportunity</option>
+                                    <option value="Technical Support">Technical Support</option>
+                                    <option value="Feature Request">Feature Request</option>
+                                    <option value="Media Inquiry">Media Inquiry</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">I am a:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="userType" value="landlord" checked>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label">Landlord</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="userType" value="tenant">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label">Tenant</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="userType" value="caretaker">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label">Caretaker</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="userType" value="other">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label">Other</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage" class="form-label">Message *</label>
+                            <textarea 
+                                id="contactMessage" 
+                                name="message" 
+                                class="form-textarea" 
+                                rows="5" 
+                                placeholder="Tell us about your inquiry or how we can help you..."
+                                required
+                            ></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary contact-form__submit">
+                                <span class="submit-text">Send Message</span>
+                                <span class="submit-loading" style="display: none;">Sending...</span>
+                            </button>
+                            <p class="form-note">
+                                * Required fields. We'll respond within 24 hours.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer" id="about">
         <div class="container">
@@ -485,8 +633,39 @@
                             <ul class="footer__link-list">
                                 <li><a href="#" class="footer__link">About Us</a></li>
                                 <li><a href="#" class="footer__link">Careers</a></li>
-                                <li><a href="#" class="footer__link">Contact</a></li>
+                                <li><a href="#contact" class="footer__link">Contact</a></li>
                                 <li><a href="#" class="footer__link">Blog</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Contact</h4>
+                            <ul class="footer__contact-list">
+                                <li class="footer__contact-item">
+                                    <span class="footer__contact-icon">📧</span>
+                                    <div class="footer__contact-content">
+                                        <a href="mailto:rentrovio@gmail.com" class="footer__contact-link">
+                                            rentrovio@gmail.com
+                                        </a>
+                                        <span class="footer__contact-label">General inquiries</span>
+                                    </div>
+                                </li>
+                                <li class="footer__contact-item">
+                                    <span class="footer__contact-icon">💬</span>
+                                    <div class="footer__contact-content">
+                                        <a href="#contact" class="footer__contact-link">
+                                            Send Message
+                                        </a>
+                                        <span class="footer__contact-label">Contact form</span>
+                                    </div>
+                                </li>
+                                <li class="footer__contact-item">
+                                    <span class="footer__contact-icon">⏰</span>
+                                    <div class="footer__contact-content">
+                                        <span class="footer__contact-link">24-hour response</span>
+                                        <span class="footer__contact-label">Our commitment</span>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                         
@@ -524,6 +703,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

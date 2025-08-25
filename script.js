@@ -37,6 +37,7 @@ const RentrovioLanding = {
   initializeComponents: function() {
     this.HeaderComponent.init();
     this.BetaSignupComponent.init();
+    this.ContactFormComponent.init();
     this.UserRolesComponent.init();
     this.PricingComponent.init();
   },
@@ -230,6 +231,9 @@ RentrovioLanding.BetaSignupComponent = {
       // Save to localStorage
       localStorage.setItem('rentrovio_waitlist', JSON.stringify(RentrovioLanding.state.subscribers));
       
+      // Send admin notification email
+      this.sendAdminNotification(email);
+      
       // Update UI
       this.showNotification('🎉 Welcome to the waitlist! We\'ll notify you when we launch.', 'success');
       this.elements.emailInput.value = '';
@@ -243,6 +247,35 @@ RentrovioLanding.BetaSignupComponent = {
       this.trackSignup(email);
       
     }, 1500);
+  },
+  
+  sendAdminNotification: function(email) {
+    // Send notification email to admin about new beta signup
+    if (typeof emailjs !== 'undefined') {
+      const adminEmailParams = {
+        to_email: 'rentrovio@gmail.com',
+        subject: 'New Beta Waitlist Signup - Rentrovio',
+        subscriber_email: email,
+        signup_time: new Date().toLocaleString(),
+        total_subscribers: RentrovioLanding.state.subscribers.length,
+        message: `A new user has joined the Rentrovio beta waitlist!\n\nEmail: ${email}\nSignup Time: ${new Date().toLocaleString()}\nTotal Subscribers: ${RentrovioLanding.state.subscribers.length}\n\nThis is an automated notification from the Rentrovio landing page.`
+      };
+      
+      emailjs.send(
+        'default_service',
+        'admin_notification',
+        adminEmailParams
+      ).then(
+        (response) => {
+          console.log('Admin notification sent successfully:', response);
+        },
+        (error) => {
+          console.warn('Failed to send admin notification:', error);
+        }
+      );
+    } else {
+      console.log('EmailJS not available, admin notification simulated for:', email);
+    }
   },
   
   isValidEmail: function(email) {
@@ -305,6 +338,352 @@ RentrovioLanding.BetaSignupComponent = {
       gtag('event', 'beta_signup', {
         event_category: 'engagement',
         event_label: 'waitlist'
+      });
+    }
+  }
+};
+
+// Contact Form Component
+RentrovioLanding.ContactFormComponent = {
+  elements: {
+    form: null,
+    nameInput: null,
+    emailInput: null,
+    subjectSelect: null,
+    messageTextarea: null,
+    userTypeRadios: null,
+    submitButton: null,
+    submitText: null,
+    submitLoading: null
+  },
+  
+  emailConfig: {
+    serviceId: 'default_service',
+    templateId: 'contact_form',
+    publicKey: 'YOUR_EMAILJS_PUBLIC_KEY',
+    toEmail: 'rentrovio@gmail.com'
+  },
+  
+  init: function() {
+    this.cacheElements();
+    this.bindEvents();
+    this.initializeEmailJS();
+  },
+  
+  cacheElements: function() {
+    this.elements.form = document.getElementById('contactForm');
+    this.elements.nameInput = document.getElementById('contactName');
+    this.elements.emailInput = document.getElementById('contactEmail');
+    this.elements.subjectSelect = document.getElementById('contactSubject');
+    this.elements.messageTextarea = document.getElementById('contactMessage');
+    this.elements.userTypeRadios = document.querySelectorAll('input[name="userType"]');
+    this.elements.submitButton = document.querySelector('.contact-form__submit');
+    this.elements.submitText = document.querySelector('.submit-text');
+    this.elements.submitLoading = document.querySelector('.submit-loading');
+  },
+  
+  bindEvents: function() {
+    if (this.elements.form) {
+      this.elements.form.addEventListener('submit', this.handleSubmit.bind(this));
+    }
+    
+    // Real-time validation
+    if (this.elements.nameInput) {
+      this.elements.nameInput.addEventListener('blur', () => this.validateField('name'));
+      this.elements.nameInput.addEventListener('input', () => this.clearFieldError('name'));
+    }
+    
+    if (this.elements.emailInput) {
+      this.elements.emailInput.addEventListener('blur', () => this.validateField('email'));
+      this.elements.emailInput.addEventListener('input', () => this.clearFieldError('email'));
+    }
+    
+    if (this.elements.subjectSelect) {
+      this.elements.subjectSelect.addEventListener('change', () => this.validateField('subject'));
+    }
+    
+    if (this.elements.messageTextarea) {
+      this.elements.messageTextarea.addEventListener('blur', () => this.validateField('message'));
+      this.elements.messageTextarea.addEventListener('input', () => this.clearFieldError('message'));
+    }
+  },
+  
+  initializeEmailJS: function() {
+    // Initialize EmailJS when the library is loaded
+    if (typeof emailjs !== 'undefined') {
+      try {
+        emailjs.init(this.emailConfig.publicKey);
+        console.log('EmailJS initialized successfully');
+      } catch (error) {
+        console.warn('EmailJS initialization failed:', error);
+      }
+    } else {
+      console.warn('EmailJS library not loaded');
+    }
+  },
+  
+  handleSubmit: function(e) {
+    e.preventDefault();
+    
+    if (!this.validateForm()) {
+      this.showNotification('Please correct the errors before submitting.', 'error');
+      return;
+    }
+    
+    this.sendEmail();
+  },
+  
+  validateForm: function() {
+    let isValid = true;
+    
+    // Validate all fields
+    ['name', 'email', 'subject', 'message'].forEach(field => {
+      if (!this.validateField(field)) {
+        isValid = false;
+      }
+    });
+    
+    return isValid;
+  },
+  
+  validateField: function(fieldName) {
+    const validators = {
+      name: () => {
+        const value = this.elements.nameInput.value.trim();
+        if (value.length < 2) {
+          this.showFieldError('name', 'Name must be at least 2 characters long');
+          return false;
+        }
+        return true;
+      },
+      
+      email: () => {
+        const value = this.elements.emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          this.showFieldError('email', 'Please enter a valid email address');
+          return false;
+        }
+        return true;
+      },
+      
+      subject: () => {
+        const value = this.elements.subjectSelect.value;
+        if (!value) {
+          this.showFieldError('subject', 'Please select a subject');
+          return false;
+        }
+        return true;
+      },
+      
+      message: () => {
+        const value = this.elements.messageTextarea.value.trim();
+        if (value.length < 10) {
+          this.showFieldError('message', 'Message must be at least 10 characters long');
+          return false;
+        }
+        return true;
+      }
+    };
+    
+    const validator = validators[fieldName];
+    if (validator) {
+      const isValid = validator();
+      if (isValid) {
+        this.clearFieldError(fieldName);
+      }
+      return isValid;
+    }
+    
+    return true;
+  },
+  
+  showFieldError: function(fieldName, message) {
+    const field = this.getFieldElement(fieldName);
+    const formGroup = field?.closest('.form-group');
+    
+    if (formGroup) {
+      formGroup.classList.add('form-group--error');
+      
+      // Remove existing error message
+      const existingError = formGroup.querySelector('.form-error-message');
+      if (existingError) {
+        existingError.remove();
+      }
+      
+      // Add new error message
+      const errorElement = document.createElement('div');
+      errorElement.className = 'form-error-message';
+      errorElement.textContent = message;
+      formGroup.appendChild(errorElement);
+    }
+  },
+  
+  clearFieldError: function(fieldName) {
+    const field = this.getFieldElement(fieldName);
+    const formGroup = field?.closest('.form-group');
+    
+    if (formGroup) {
+      formGroup.classList.remove('form-group--error');
+      const errorMessage = formGroup.querySelector('.form-error-message');
+      if (errorMessage) {
+        errorMessage.remove();
+      }
+    }
+  },
+  
+  getFieldElement: function(fieldName) {
+    const fieldMap = {
+      name: this.elements.nameInput,
+      email: this.elements.emailInput,
+      subject: this.elements.subjectSelect,
+      message: this.elements.messageTextarea
+    };
+    return fieldMap[fieldName];
+  },
+  
+  sendEmail: function() {
+    this.setSubmitState(true);
+    
+    const formData = this.getFormData();
+    const emailParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      user_type: formData.userType,
+      timestamp: new Date().toISOString(),
+      to_email: this.emailConfig.toEmail
+    };
+    
+    // Try to send email with EmailJS
+    if (typeof emailjs !== 'undefined') {
+      emailjs.send(
+        this.emailConfig.serviceId,
+        this.emailConfig.templateId,
+        emailParams
+      ).then(
+        (response) => {
+          console.log('Email sent successfully:', response);
+          this.onEmailSuccess(formData);
+        },
+        (error) => {
+          console.error('Email sending failed:', error);
+          this.onEmailError(error);
+        }
+      );
+    } else {
+      // Fallback: simulate successful email sending for demo
+      console.log('EmailJS not available, simulating email send:', emailParams);
+      setTimeout(() => {
+        this.onEmailSuccess(formData);
+      }, 2000);
+    }
+  },
+  
+  getFormData: function() {
+    const selectedUserType = document.querySelector('input[name="userType"]:checked');
+    
+    return {
+      name: this.elements.nameInput.value.trim(),
+      email: this.elements.emailInput.value.trim(),
+      subject: this.elements.subjectSelect.value,
+      message: this.elements.messageTextarea.value.trim(),
+      userType: selectedUserType ? selectedUserType.value : 'not-specified'
+    };
+  },
+  
+  onEmailSuccess: function(formData) {
+    this.setSubmitState(false);
+    this.showNotification(
+      '🎉 Message sent successfully! We\'ll get back to you within 24 hours.',
+      'success'
+    );
+    this.resetForm();
+    this.trackContactSubmission(formData);
+  },
+  
+  onEmailError: function(error) {
+    this.setSubmitState(false);
+    this.showNotification(
+      'Sorry, there was an error sending your message. Please try again or email us directly at rentrovio@gmail.com.',
+      'error'
+    );
+    console.error('Contact form error:', error);
+  },
+  
+  setSubmitState: function(isSubmitting) {
+    if (this.elements.submitButton) {
+      this.elements.submitButton.disabled = isSubmitting;
+    }
+    
+    if (this.elements.submitText && this.elements.submitLoading) {
+      if (isSubmitting) {
+        this.elements.submitText.style.display = 'none';
+        this.elements.submitLoading.style.display = 'inline';
+      } else {
+        this.elements.submitText.style.display = 'inline';
+        this.elements.submitLoading.style.display = 'none';
+      }
+    }
+  },
+  
+  resetForm: function() {
+    if (this.elements.form) {
+      this.elements.form.reset();
+      
+      // Clear any error states
+      document.querySelectorAll('.form-group--error').forEach(group => {
+        group.classList.remove('form-group--error');
+      });
+      
+      document.querySelectorAll('.form-error-message').forEach(error => {
+        error.remove();
+      });
+      
+      // Reset radio buttons to default (landlord)
+      const firstRadio = document.querySelector('input[name="userType"][value="landlord"]');
+      if (firstRadio) {
+        firstRadio.checked = true;
+      }
+    }
+  },
+  
+  showNotification: function(message, type) {
+    // Remove existing notifications
+    document.querySelectorAll('.notification').forEach(n => n.remove());
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification--${type}`;
+    notification.textContent = message;
+    
+    // Add to DOM
+    document.body.appendChild(notification);
+    
+    // Animate in
+    notification.style.animation = 'slideInRight 0.3s ease';
+    
+    // Remove after 6 seconds (longer for contact form)
+    setTimeout(() => {
+      notification.style.animation = 'slideOutRight 0.3s ease';
+      setTimeout(() => {
+        if (notification.parentNode) {
+          notification.parentNode.removeChild(notification);
+        }
+      }, 300);
+    }, 6000);
+  },
+  
+  trackContactSubmission: function(formData) {
+    // Analytics tracking
+    console.log('Contact form submission tracked:', formData);
+    
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'contact_form_submit', {
+        event_category: 'engagement',
+        event_label: formData.subject,
+        user_type: formData.userType
       });
     }
   }
