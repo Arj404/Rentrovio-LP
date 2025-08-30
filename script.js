@@ -59,9 +59,20 @@ const RentrovioLanding = {
     });
     
     // Global click handler for CTA buttons
-    document.querySelectorAll('.header__cta-button').forEach(button => {
+    document.querySelectorAll('.header__cta-button, .pricing-card__button').forEach(button => {
       button.addEventListener('click', () => {
-        document.getElementById('emailInput').focus();
+        const emailInput = document.getElementById('emailInput');
+        if (emailInput) {
+          // Scroll to the beta signup section smoothly
+          emailInput.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+          // Focus on the email input after scrolling
+          setTimeout(() => {
+            emailInput.focus();
+          }, 500);
+        }
       });
     });
   },
@@ -168,22 +179,28 @@ RentrovioLanding.HeaderComponent = {
     // Update state
     RentrovioLanding.state.isMobileMenuOpen = newState;
     
-    // Handle navigation display
+    // Handle navigation visibility
     if (newState) {
-      // Show menu
-      this.elements.navigation.style.display = 'block';
-      // Force reflow before adding active class for smooth animation
+      // Show menu with animation
+      this.elements.navigation.style.visibility = 'visible';
+      this.elements.navigation.style.opacity = '0';
+      this.elements.navigation.style.transform = 'translateY(-100%)';
+      
+      // Force reflow
       this.elements.navigation.offsetHeight;
+      
+      // Animate in
       this.elements.navigation.classList.add('active');
     } else {
-      // Hide menu
+      // Hide menu with animation
       this.elements.navigation.classList.remove('active');
-      // Hide after transition completes
+      
+      // Hide after animation completes
       setTimeout(() => {
         if (!RentrovioLanding.state.isMobileMenuOpen) {
-          this.elements.navigation.style.display = 'none';
+          this.elements.navigation.style.visibility = 'hidden';
         }
-      }, 300);
+      }, 400);
     }
     
     // Update ARIA attributes for accessibility
@@ -197,10 +214,9 @@ RentrovioLanding.HeaderComponent = {
     
     // Focus management for accessibility
     if (newState) {
-      // Focus first navigation link when menu opens
       const firstNavLink = this.elements.navigation.querySelector('.header__nav-link');
       if (firstNavLink) {
-        setTimeout(() => firstNavLink.focus(), 100);
+        setTimeout(() => firstNavLink.focus(), 200);
       }
     }
   },
@@ -213,8 +229,10 @@ RentrovioLanding.HeaderComponent = {
       this.elements.mobileToggle.classList.remove('active');
       this.elements.mobileToggle.setAttribute('aria-expanded', false);
       document.body.style.overflow = '';
-      // Reset navigation display for desktop
-      this.elements.navigation.style.display = '';
+      // Reset navigation styles for desktop
+      this.elements.navigation.style.visibility = '';
+      this.elements.navigation.style.opacity = '';
+      this.elements.navigation.style.transform = '';
     }
   },
   
@@ -369,7 +387,11 @@ RentrovioLanding.BetaSignupComponent = {
   
   updateSubmitButton: function(text, disabled) {
     if (this.elements.submitButton) {
-      this.elements.submitButton.textContent = text;
+      if (disabled && text.includes('...')) {
+        this.elements.submitButton.innerHTML = `<span class="spinner"></span>${text}`;
+      } else {
+        this.elements.submitButton.textContent = text;
+      }
       this.elements.submitButton.disabled = disabled;
     }
   },
@@ -890,22 +912,25 @@ RentrovioLanding.UserRolesComponent = {
 RentrovioLanding.PricingComponent = {
   init: function() {
     this.setupComingSoonEffects();
-    this.setupPricingAnimations();
   },
   
   setupComingSoonEffects: function() {
     const pricingButton = document.querySelector('.pricing-card__button');
     
-    if (pricingButton && pricingButton.disabled) {
+    if (pricingButton) {
+      // Add click handler regardless of disabled state
       pricingButton.addEventListener('click', (e) => {
         e.preventDefault();
-        document.getElementById('emailInput')?.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'center'
-        });
-        setTimeout(() => {
-          document.getElementById('emailInput')?.focus();
-        }, 500);
+        const emailInput = document.getElementById('emailInput');
+        if (emailInput) {
+          emailInput.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'center'
+          });
+          setTimeout(() => {
+            emailInput.focus();
+          }, 500);
+        }
       });
       
       // Add hover effect
@@ -919,30 +944,6 @@ RentrovioLanding.PricingComponent = {
           pricingButton.style.transform = 'scale(1)';
         });
       }
-    }
-  },
-  
-  setupPricingAnimations: function() {
-    const pricingCard = document.querySelector('.pricing-card');
-    if (pricingCard) {
-      pricingCard.classList.add('fade-in');
-      
-      // Animate pricing when visible
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            
-            // Animate price counter
-            const priceAmount = entry.target.querySelector('.pricing-card__amount');
-            if (priceAmount) {
-              this.animatePrice(priceAmount, 10);
-            }
-          }
-        });
-      }, { threshold: 0.5 });
-      
-      observer.observe(pricingCard);
     }
   },
   
