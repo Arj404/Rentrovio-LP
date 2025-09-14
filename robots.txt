@@ -8,6 +8,17 @@ Allow: /#user-roles
 Allow: /#pricing
 Allow: /#contact
 Allow: /#about
+Allow: /#faq
 
 # Rate limiting to prevent server overload
 Crawl-delay: 1
+
+# Additional pages
+Allow: /about.html
+Allow: /contact.html
+Allow: /blog.html
+Allow: /careers.html
+Allow: /privacy-policy.html
+Allow: /terms-of-service.html
+Allow: /cookie-policy.html
+Allow: /gdpr.html
