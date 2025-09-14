@@ -13,24 +13,9 @@ const RentrovioLanding = {
 
   // Initialize application
   init: function () {
-    this.loadSubscribers();
     this.initializeComponents();
     this.setupEventListeners();
     this.setupScrollAnimations();
-  },
-
-  // Load existing subscribers from localStorage
-  loadSubscribers: function () {
-    const stored = localStorage.getItem("rentrovio_waitlist");
-    if (stored) {
-      try {
-        this.state.subscribers = JSON.parse(stored);
-        this.updateWaitlistCounter();
-      } catch (e) {
-        console.warn("Failed to parse stored subscribers:", e);
-        this.state.subscribers = [];
-      }
-    }
   },
 
   // Initialize all components
@@ -101,17 +86,6 @@ const RentrovioLanding = {
         el.classList.add("fade-in");
         observer.observe(el);
       });
-  },
-
-  // Update waitlist counter display
-  updateWaitlistCounter: function () {
-    const count = this.state.subscribers.length;
-    if (count > 0) {
-      const badge = document.querySelector(".coming-soon-badge__text");
-      if (badge) {
-        badge.textContent = `Coming Soon • ${count} on waitlist`;
-      }
-    }
   },
 };
 

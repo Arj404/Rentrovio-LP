@@ -19,14 +19,14 @@ This landing page showcases the multi-role capabilities of the Rentrovio platfor
 
 ```css
 :root {
-  --primary: #38040E;        /* Deep Burgundy */
-  --background: #f9fafb;     /* Light Gray */
-  --card-background: #EAE0D5; /* Cream */
-  --text-primary: #1A1A1A;   /* Dark Gray */
+  --primary: #38040e; /* Deep Burgundy */
+  --background: #f9fafb; /* Light Gray */
+  --card-background: #eae0d5; /* Cream */
+  --text-primary: #1a1a1a; /* Dark Gray */
   --text-secondary: #22333b; /* Medium Gray */
-  --success: #7FA07E;        /* Green */
-  --error: #E63946;          /* Red */
-  --warning: #F5CB5C;        /* Orange */
+  --success: #7fa07e; /* Green */
+  --error: #e63946; /* Red */
+  --warning: #f5cb5c; /* Orange */
 }
 ```
 
@@ -35,8 +35,8 @@ This landing page showcases the multi-role capabilities of the Rentrovio platfor
 ```
 rentrovio-landing/
 ├── index.html              # Main landing page
-├── styles.css              # Main stylesheet with CSS custom properties
-├── script.js               # Interactive JavaScript functionality
+├── styles.min.css              # Main stylesheet with CSS custom properties
+├── script.min.js               # Interactive JavaScript functionality
 ├── assets/
 │   └── images/
 │       ├── logo.png        # Company logo
@@ -54,11 +54,13 @@ rentrovio-landing/
 ## ✨ Key Features
 
 ### User Role Sections
+
 - **Landlord Dashboard** - Property management, earnings tracking, staff coordination
 - **Tenant Portal** - Unit management, payments, maintenance requests
 - **Caretaker Interface** - Multi-property oversight, task management, utilities
 
 ### Interactive Components
+
 - **Beta Signup Form** - Email validation and local storage
 - **Role Switching** - Dynamic content updates for different user types
 - **Scroll Animations** - Intersection Observer API for smooth reveals
@@ -66,6 +68,7 @@ rentrovio-landing/
 - **Notification System** - Success/error messages for user actions
 
 ### Pricing
+
 - **$10/month** for Landlord Pro plan
 - **First month free** promotion
 - **Coming Soon** badge indicating development status
@@ -79,6 +82,7 @@ rentrovio-landing/
 ## 📱 Responsive Design
 
 The landing page is built with a mobile-first approach and includes:
+
 - Mobile navigation with hamburger menu
 - Responsive grid layouts
 - Optimized touch targets
@@ -88,17 +92,20 @@ The landing page is built with a mobile-first approach and includes:
 ## 🧪 Features to Test
 
 1. **Beta Signup Form**
+
    - Email validation
    - Duplicate email detection
    - Success/error notifications
    - Local storage persistence
 
 2. **User Role Switching**
+
    - Tab navigation between roles
    - Dynamic content updates
    - Navigation tab updates
 
 3. **Responsive Design**
+
    - Mobile menu functionality
    - Layout adaptation across screen sizes
    - Touch-friendly interactions
@@ -117,13 +124,16 @@ The landing page is built with a mobile-first approach and includes:
 ## 🎛️ Customization
 
 ### Colors
-Update CSS custom properties in `styles.css` under the `:root` selector.
+
+Update CSS custom properties in `styles.min.css` under the `:root` selector.
 
 ### Content
-Modify text content directly in `index.html` or update the JavaScript data objects in `script.js` for dynamic content.
+
+Modify text content directly in `index.html` or update the JavaScript data objects in `script.min.js` for dynamic content.
 
 ### Features
-Add new features by extending the JavaScript component objects in `script.js`.
+
+Add new features by extending the JavaScript component objects in `script.min.js`.
 
 ## 🔮 Future Enhancements
 
