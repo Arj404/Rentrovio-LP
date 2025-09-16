@@ -107,10 +107,19 @@ RentrovioLanding.HeaderComponent = {
     this.elements.header = document.getElementById("header");
     this.elements.mobileToggle = document.getElementById("mobileToggle");
     this.elements.navigation = document.getElementById("navigation");
+    
+    // Debug logging
+    console.log("Header component elements:", {
+      header: this.elements.header,
+      mobileToggle: this.elements.mobileToggle,
+      navigation: this.elements.navigation
+    });
   },
 
   bindEvents: function () {
-    if (this.elements.mobileToggle) {
+    if (this.elements.mobileToggle && this.elements.navigation) {
+      console.log("Binding mobile toggle events");
+      
       this.elements.mobileToggle.addEventListener(
         "click",
         this.toggleMobileMenu.bind(this)
@@ -125,36 +134,42 @@ RentrovioLanding.HeaderComponent = {
         },
         { passive: false }
       );
+    } else {
+      console.error("Mobile toggle or navigation element not found", {
+        mobileToggle: this.elements.mobileToggle,
+        navigation: this.elements.navigation
+      });
     }
 
     // Close mobile menu when clicking navigation links
     if (this.elements.navigation) {
       this.elements.navigation.addEventListener("click", (e) => {
-        if (
-          e.target.matches(".header__nav-link") &&
-          RentrovioLanding.state.isMobileMenuOpen
-        ) {
-          this.toggleMobileMenu();
+        if (e.target.matches(".header__nav-link")) {
+          console.log("Navigation link clicked, closing mobile menu");
+          this.closeMobileMenu();
         }
       });
     }
 
     // Close mobile menu on escape key
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && RentrovioLanding.state.isMobileMenuOpen) {
-        this.toggleMobileMenu();
-        this.elements.mobileToggle.focus();
+      if (e.key === "Escape") {
+        console.log("Escape key pressed, closing mobile menu");
+        this.closeMobileMenu();
       }
     });
 
     // Enhanced outside click detection
     document.addEventListener("click", (e) => {
       if (
-        RentrovioLanding.state.isMobileMenuOpen &&
+        this.elements.navigation && 
+        this.elements.mobileToggle &&
+        this.elements.navigation.classList.contains("active") &&
         !this.elements.navigation.contains(e.target) &&
         !this.elements.mobileToggle.contains(e.target)
       ) {
-        this.toggleMobileMenu();
+        console.log("Clicked outside menu, closing mobile menu");
+        this.closeMobileMenu();
       }
     });
 
@@ -163,67 +178,37 @@ RentrovioLanding.HeaderComponent = {
   },
 
   toggleMobileMenu: function () {
-    const isOpen = RentrovioLanding.state.isMobileMenuOpen;
-    const newState = !isOpen;
-
-    // Update state
-    RentrovioLanding.state.isMobileMenuOpen = newState;
-
-    // Handle navigation visibility
-    if (newState) {
-      // Show menu with animation
-      this.elements.navigation.style.visibility = "visible";
-      this.elements.navigation.style.opacity = "0";
-      this.elements.navigation.style.transform = "translateY(-100%)";
-
-      // Force reflow
-      this.elements.navigation.offsetHeight;
-
-      // Animate in
-      this.elements.navigation.classList.add("active");
+    console.log("Toggle mobile menu called");
+    if (this.elements.navigation.classList.contains("active")) {
+      this.closeMobileMenu();
     } else {
-      // Hide menu with animation
-      this.elements.navigation.classList.remove("active");
-
-      // Hide after animation completes
-      setTimeout(() => {
-        if (!RentrovioLanding.state.isMobileMenuOpen) {
-          this.elements.navigation.style.visibility = "hidden";
-        }
-      }, 400);
+      this.openMobileMenu();
     }
+  },
 
-    // Update ARIA attributes for accessibility
-    this.elements.mobileToggle.setAttribute("aria-expanded", newState);
-
-    // Toggle hamburger animation class
-    this.elements.mobileToggle.classList.toggle("active", newState);
-
+  openMobileMenu: function () {
+    console.log("Opening mobile menu");
+    this.elements.navigation.classList.add("active");
+    this.elements.mobileToggle.classList.add("active");
+    this.elements.mobileToggle.setAttribute("aria-expanded", "true");
     // Prevent body scroll when menu is open
-    document.body.style.overflow = newState ? "hidden" : "";
+    document.body.style.overflow = "hidden";
+  },
 
-    // Focus management for accessibility
-    if (newState) {
-      const firstNavLink =
-        this.elements.navigation.querySelector(".header__nav-link");
-      if (firstNavLink) {
-        setTimeout(() => firstNavLink.focus(), 200);
-      }
-    }
+  closeMobileMenu: function () {
+    console.log("Closing mobile menu");
+    this.elements.navigation.classList.remove("active");
+    this.elements.mobileToggle.classList.remove("active");
+    this.elements.mobileToggle.setAttribute("aria-expanded", "false");
+    // Restore body scroll
+    document.body.style.overflow = "";
   },
 
   handleResize: function () {
     // Close mobile menu when resizing to desktop
-    if (window.innerWidth >= 768 && RentrovioLanding.state.isMobileMenuOpen) {
-      RentrovioLanding.state.isMobileMenuOpen = false;
-      this.elements.navigation.classList.remove("active");
-      this.elements.mobileToggle.classList.remove("active");
-      this.elements.mobileToggle.setAttribute("aria-expanded", false);
-      document.body.style.overflow = "";
-      // Reset navigation styles for desktop
-      this.elements.navigation.style.visibility = "";
-      this.elements.navigation.style.opacity = "";
-      this.elements.navigation.style.transform = "";
+    if (window.innerWidth >= 768) {
+      console.log("Window resized to desktop, closing mobile menu");
+      this.closeMobileMenu();
     }
   },
 
@@ -354,7 +339,11 @@ RentrovioLanding.BetaSignupComponent = {
         subscriber_email: email,
         signup_time: new Date().toLocaleString(),
         total_subscribers: RentrovioLanding.state.subscribers.length,
-        message: `A new user has joined the Rentrovio beta waitlist!\n\nEmail: ${email}\nSignup Time: ${new Date().toLocaleString()}\nTotal Subscribers: ${
+        message: `A new user has joined the Rentrovio beta waitlist!
+
+Email: ${email}
+Signup Time: ${new Date().toLocaleString()}
+Total Subscribers: ${
           RentrovioLanding.state.subscribers.length
         }\n\nThis is an automated notification from the Rentrovio landing page.`,
       };
@@ -1093,9 +1082,11 @@ window.addEventListener("error", (e) => {
 
 // Initialize application when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM Content Loaded");
   try {
     RentrovioLanding.init();
     console.log("Rentrovio Landing Page initialized successfully");
+    RentrovioLanding.initialized = true;
   } catch (error) {
     console.error("Failed to initialize landing page:", error);
   }
@@ -1103,12 +1094,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Initialize on window load as fallback
 window.addEventListener("load", () => {
+  console.log("Window loaded");
   // Additional load optimizations
   if (
     typeof RentrovioLanding !== "undefined" &&
     !RentrovioLanding.initialized
   ) {
+    console.log("Initializing Rentrovio Landing Page on window load");
     RentrovioLanding.init();
+    console.log("Rentrovio Landing Page initialized on window load");
+    RentrovioLanding.initialized = true;
   }
 });
 
