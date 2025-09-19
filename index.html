@@ -166,22 +166,14 @@
       <div class="container">
         <div class="header__content">
           <div class="header__logo">
-            <img
-              src="assets/images/logo.png"
-              alt="Rentrovio - Rent Management Platform"
-              class="header__logo-image"
-            />
+            <a href="index.html">
+              <img
+                src="assets/images/logo.png"
+                alt="Rentrovio - Rent Management Platform"
+                class="header__logo-image"
+              />
+            </a>
           </div>
-
-          <button
-            id="mobileToggle"
-            class="header__mobile-toggle"
-            aria-controls="navigation"
-            aria-expanded="false"
-            aria-label="Toggle navigation menu"
-          >
-            <span class="header__mobile-toggle-icon"></span>
-          </button>
 
           <nav
             class="header__navigation"
@@ -215,31 +207,37 @@
                 >
               </li>
               <li class="header__nav-item">
-                <a
-                  href="#contact"
-                  class="header__nav-link"
-                  aria-describedby="contact-section"
-                  >Contact</a
-                >
+                <a href="about.html" class="header__nav-link">About</a>
               </li>
               <li class="header__nav-item">
-                <a
-                  href="#about"
-                  class="header__nav-link"
-                  aria-describedby="about-section"
-                  >About</a
-                >
+                <a href="careers.html" class="header__nav-link">Careers</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="blog.html" class="header__nav-link">Blog</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="contact.html" class="header__nav-link">Contact</a>
               </li>
             </ul>
           </nav>
 
           <div class="header__actions">
-            <button
+            <a
+              href="#beta-signup"
               class="btn btn--primary header__cta-button"
               id="headerCTA"
               aria-describedby="beta-signup"
             >
               Join Beta Waitlist
+            </a>
+            <button
+              id="mobileToggle"
+              class="header__mobile-toggle"
+              aria-controls="navigation"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu"
+            >
+              <span class="header__mobile-toggle-icon"></span>
             </button>
           </div>
         </div>
@@ -705,6 +703,119 @@
       </div>
     </section>
 
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog-preview">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Latest Insights</h2>
+          <p class="section-description">
+            Stay updated with the latest property management tips, trends, and industry insights
+          </p>
+        </div>
+
+        <div class="blog-preview-grid">
+          <article class="blog-preview-card">
+            <a href="blogs/essential-property-management-kpis.html" class="blog-preview-card__link" aria-label="Read full article: 10 Essential Property Management KPIs Every Landlord Should Track">
+              <div class="blog-preview-card__image">
+                <div class="blog-preview-card__image-placeholder">
+                  <span>📊</span>
+                </div>
+              </div>
+              <div class="blog-preview-card__content">
+                <div class="blog-preview-card__meta">
+                  <span class="blog-preview-card__category">Tips & Guides</span>
+                  <span class="blog-preview-card__date">December 15, 2024</span>
+                </div>
+                <h3 class="blog-preview-card__title">
+                  10 Essential Property Management KPIs Every Landlord Should Track
+                </h3>
+                <p class="blog-preview-card__excerpt">
+                  Discover the key performance indicators that successful property managers use to optimize their operations and maximize returns.
+                </p>
+                <div class="blog-preview-card__author">
+                  <div class="blog-preview-card__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-preview-card__author-info">
+                    <span class="blog-preview-card__author-name">Arjav Jain</span>
+                    <span class="blog-preview-card__author-role">CEO</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="blog-preview-card">
+            <a href="blogs/ai-revolutionizing-property-management.html" class="blog-preview-card__link" aria-label="Read full article: How AI is Revolutionizing Property Management">
+              <div class="blog-preview-card__image">
+                <div class="blog-preview-card__image-placeholder">
+                  <span>🤖</span>
+                </div>
+              </div>
+              <div class="blog-preview-card__content">
+                <div class="blog-preview-card__meta">
+                  <span class="blog-preview-card__category">Technology</span>
+                  <span class="blog-preview-card__date">December 10, 2024</span>
+                </div>
+                <h3 class="blog-preview-card__title">
+                  How AI is Revolutionizing Property Management
+                </h3>
+                <p class="blog-preview-card__excerpt">
+                  Explore how artificial intelligence and automation are transforming the way property managers handle maintenance, tenant screening, and operations.
+                </p>
+                <div class="blog-preview-card__author">
+                  <div class="blog-preview-card__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-preview-card__author-info">
+                    <span class="blog-preview-card__author-name">Arjav Jain</span>
+                    <span class="blog-preview-card__author-role">CEO</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="blog-preview-card">
+            <a href="blogs/2025-rental-market-trends.html" class="blog-preview-card__link" aria-label="Read full article: 2025 Rental Market Trends: What Property Managers Need to Know">
+              <div class="blog-preview-card__image">
+                <div class="blog-preview-card__image-placeholder">
+                  <span>📈</span>
+                </div>
+              </div>
+              <div class="blog-preview-card__content">
+                <div class="blog-preview-card__meta">
+                  <span class="blog-preview-card__category">Industry News</span>
+                  <span class="blog-preview-card__date">December 5, 2024</span>
+                </div>
+                <h3 class="blog-preview-card__title">
+                  2025 Rental Market Trends: What Property Managers Need to Know
+                </h3>
+                <p class="blog-preview-card__excerpt">
+                  Stay ahead of the curve with our analysis of emerging trends in the rental market and their implications for property management.
+                </p>
+                <div class="blog-preview-card__author">
+                  <div class="blog-preview-card__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-preview-card__author-info">
+                    <span class="blog-preview-card__author-name">Arjav Jain</span>
+                    <span class="blog-preview-card__author-role">CEO</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <div class="blog-section__cta">
+          <a href="blog.html" class="btn blog-section__button">
+            View All Articles
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Us Section -->
     <section class="contact-section" id="contact">
       <div class="container">
@@ -916,11 +1027,11 @@
               <div class="footer__column">
                 <h4 class="footer__column-title">Product</h4>
                 <ul class="footer__link-list">
-                  <li><a href="#features" class="footer__link">Features</a></li>
+                  <li><a href="../index.html#features" class="footer__link">Features</a></li>
                   <li>
-                    <a href="#user-roles" class="footer__link">User Roles</a>
+                    <a href="../index.html#user-roles" class="footer__link">User Roles</a>
                   </li>
-                  <li><a href="#pricing" class="footer__link">Pricing</a></li>
+                  <li><a href="../index.html#pricing" class="footer__link">Pricing</a></li>
                   <li><a href="#" class="footer__link">Security</a></li>
                 </ul>
               </div>
