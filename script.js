@@ -16,6 +16,11 @@ const RentrovioLanding = {
     this.initializeComponents();
     this.setupEventListeners();
     this.setupScrollAnimations();
+    
+    // Prefetch important pages after initial load
+    setTimeout(() => {
+      this.PrefetchComponent.prefetchImportantPages();
+    }, 3000); // Wait 3 seconds after page load
   },
 
   // Initialize all components
@@ -25,6 +30,7 @@ const RentrovioLanding = {
     this.ContactFormComponent.init();
     this.UserRolesComponent.init();
     this.PricingComponent.init();
+    this.PrefetchComponent.init();
   },
 
   // Setup global event listeners
@@ -1023,6 +1029,158 @@ RentrovioLanding.PricingComponent = {
       element.textContent = `$${Math.floor(currentPrice)}`;
     }, intervalTime);
   },
+};
+
+// Link Prefetch Component
+RentrovioLanding.PrefetchComponent = {
+  prefetchedUrls: new Set(),
+  prefetchElements: new Map(),
+  
+  init: function() {
+    this.setupHoverPrefetch();
+  },
+  
+  setupHoverPrefetch: function() {
+    // Use event delegation for better performance
+    document.addEventListener('mouseenter', (e) => {
+      if (e.target.tagName === 'A' && e.target.href) {
+        this.handleLinkHover(e.target);
+      }
+    }, true);
+    
+    document.addEventListener('mouseleave', (e) => {
+      if (e.target.tagName === 'A' && e.target.href) {
+        this.handleLinkLeave(e.target);
+      }
+    }, true);
+  },
+  
+  handleLinkHover: function(link) {
+    const url = link.href;
+    
+    // Skip if already prefetched or invalid
+    if (!this.shouldPrefetch(url)) {
+      return;
+    }
+    
+    // Add visual indicator class
+    link.classList.add('prefetch-indicator');
+    
+    // Add small delay to avoid prefetching on quick mouse movements
+    const prefetchTimeout = setTimeout(() => {
+      link.classList.add('prefetching');
+      this.prefetchUrl(url);
+      
+      // Remove visual indicator after prefetch starts
+      setTimeout(() => {
+        link.classList.remove('prefetching');
+      }, 1000);
+    }, 100);
+    
+    // Store timeout so we can cancel it if mouse leaves quickly
+    link._prefetchTimeout = prefetchTimeout;
+  },
+  
+  handleLinkLeave: function(link) {
+    // Cancel prefetch if mouse leaves quickly
+    if (link._prefetchTimeout) {
+      clearTimeout(link._prefetchTimeout);
+      delete link._prefetchTimeout;
+    }
+    
+    // Remove visual indicators
+    link.classList.remove('prefetch-indicator', 'prefetching');
+  },
+  
+  shouldPrefetch: function(url) {
+    try {
+      const linkUrl = new URL(url);
+      const currentUrl = new URL(window.location.href);
+      
+      // Skip if already prefetched
+      if (this.prefetchedUrls.has(url)) {
+        return false;
+      }
+      
+      // Skip external links
+      if (linkUrl.hostname !== currentUrl.hostname) {
+        return false;
+      }
+      
+      // Skip anchor links on same page
+      if (linkUrl.pathname === currentUrl.pathname && linkUrl.hash) {
+        return false;
+      }
+      
+      // Skip mailto, tel, and other non-http protocols
+      if (!linkUrl.protocol.startsWith('http')) {
+        return false;
+      }
+      
+      // Skip current page
+      if (linkUrl.href === currentUrl.href) {
+        return false;
+      }
+      
+      return true;
+    } catch (e) {
+      // Invalid URL
+      return false;
+    }
+  },
+  
+  prefetchUrl: function(url) {
+    // Mark as prefetched
+    this.prefetchedUrls.add(url);
+    
+    // Create prefetch link element
+    const prefetchLink = document.createElement('link');
+    prefetchLink.rel = 'prefetch';
+    prefetchLink.href = url;
+    prefetchLink.as = 'document';
+    
+    // Add to head
+    document.head.appendChild(prefetchLink);
+    
+    // Store reference for cleanup
+    this.prefetchElements.set(url, prefetchLink);
+    
+    // Optional: Log for debugging (remove in production)
+    console.log('Prefetching:', url);
+    
+    // Clean up old prefetch elements after some time to avoid memory issues
+    setTimeout(() => {
+      this.cleanupPrefetch(url);
+    }, 30000); // Clean up after 30 seconds
+  },
+  
+  cleanupPrefetch: function(url) {
+    const element = this.prefetchElements.get(url);
+    if (element && element.parentNode) {
+      element.parentNode.removeChild(element);
+      this.prefetchElements.delete(url);
+    }
+  },
+  
+  // Method to manually prefetch important pages
+  prefetchImportantPages: function() {
+    const importantPages = [
+      '/about.html',
+      '/blog.html',
+      '/contact.html',
+      '/careers.html'
+    ];
+    
+    importantPages.forEach(page => {
+      const fullUrl = new URL(page, window.location.origin).href;
+      if (this.shouldPrefetch(fullUrl)) {
+        // Add small delay between prefetches to avoid overwhelming the browser
+        setTimeout(() => {
+          this.prefetchUrl(fullUrl);
+        }, Math.random() * 2000);
+      }
+    });
+  }
 };
 
 // Utility Functions
