@@ -55,7 +55,7 @@
                https://cdn.jsdelivr.net/npm/@emailjs/browser@4/
                https://www.googletagmanager.com/
                https://www.google-analytics.com/
-               https://static.cloudflareinsights.com/;
+               https://*.cloudflareinsights.com/;
     style-src 'self' 
               'unsafe-inline';
     img-src 'self' 
@@ -67,7 +67,8 @@
     connect-src 'self' 
                 https://api.emailjs.com/
                 https://www.google-analytics.com/
-                https://www.googletagmanager.com/;
+                https://www.googletagmanager.com/
+                https://*.cloudflareinsights.com/;
     frame-src 'none';
     object-src 'none';
     base-uri 'self';
