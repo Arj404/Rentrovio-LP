@@ -1,91 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Meta Tags -->
-    <meta
-      id="MetaDescription"
-      name="description"
-      content="Rentrovio - Comprehensive rent management platform for landlords, tenants, and caretakers. Streamline property management with automated payment processing, maintenance coordination, and analytics."
-    />
-    <meta
-      id="MetaKeywords"
-      name="keywords"
-      content="rent management, property management, landlord software, tenant portal, property maintenance, rental payments, real estate software, caretaker tools, property analytics"
-    />
-    <link
-      rel="shortcut icon"
-      href="assets/icons/favicon.ico"
-      type="image/favicon"
-    />
-    <meta name="author" content="Rentrovio" />
-    <meta
-      name="robots"
-      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    />
-    <meta name="language" content="English" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Open Graph Protocol for Social Media -->
-    <meta
-      property="og:title"
-      content="Rentrovio - Complete Rent Management Platform"
-    />
-    <meta
-      property="og:description"
-      content="Streamline property management with our comprehensive solution for landlords, tenants, and caretakers. Join the beta waitlist today!"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rentrovio.com" />
-    <meta
-      property="og:image"
-      content="https://rentrovio.com/assets/images/app_icon.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Rentrovio" />
-    <meta property="og:locale" content="en_US" />
+  <!-- SEO Meta Tags -->
+  <meta id="MetaDescription" name="description"
+    content="Rentrovio - Comprehensive rent management platform for landlords, tenants, and caretakers. Streamline property management with automated payment processing, maintenance coordination, and analytics." />
+  <meta id="MetaKeywords" name="keywords"
+    content="rent management, property management, landlord software, tenant portal, property maintenance, rental payments, real estate software, caretaker tools, property analytics" />
+  <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/favicon" />
+  <meta name="author" content="Rentrovio" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="language" content="English" />
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Rentrovio - Complete Rent Management Platform"
-    />
-    <meta
-      name="twitter:description"
-      content="Streamline property management with our comprehensive solution. Join the beta waitlist today!"
-    />
-    <meta
-      name="twitter:image"
-      content="https://rentrovio.com/assets/images/app_icon.png"
-    />
-    <meta
-      name="twitter:image:alt"
-      content="Rentrovio - Rent Management Platform"
-    />
+  <!-- Open Graph Protocol for Social Media -->
+  <meta property="og:title" content="Rentrovio - Complete Rent Management Platform" />
+  <meta property="og:description"
+    content="Streamline property management with our comprehensive solution for landlords, tenants, and caretakers. Join the beta waitlist today!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rentrovio.com" />
+  <meta property="og:image" content="https://rentrovio.com/assets/images/app_icon.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Rentrovio" />
+  <meta property="og:locale" content="en_US" />
 
-    <!-- Additional SEO and Performance Meta Tags -->
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Rentrovio" />
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rentrovio - Complete Rent Management Platform" />
+  <meta name="twitter:description"
+    content="Streamline property management with our comprehensive solution. Join the beta waitlist today!" />
+  <meta name="twitter:image" content="https://rentrovio.com/assets/images/app_icon.png" />
+  <meta name="twitter:image:alt" content="Rentrovio - Rent Management Platform" />
 
-    <meta name="msvalidate.01" content="4BB6F760866DB7F3FB7F123C4180E3F8" />
+  <!-- Additional SEO and Performance Meta Tags -->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Rentrovio" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://rentrovio.com" hreflang="en-US" />
-    <title>Rentrovio - Comprehensive Rent Management Platform</title>
-    <link rel="icon" type="image/png" href="assets/images/app_icon.png" />
-    <link rel="apple-touch-icon" href="assets/images/app_icon.png" />
+  <meta name="msvalidate.01" content="4BB6F760866DB7F3FB7F123C4180E3F8" />
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.min.css" />
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://rentrovio.com" hreflang="en-US" />
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
+  <!-- Content Security Policy for XSS Protection -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 
+               'unsafe-inline'
+               https://cdn.jsdelivr.net/npm/@emailjs/browser@4/
+               https://www.googletagmanager.com/
+               https://www.google-analytics.com/;
+    style-src 'self' 
+              'unsafe-inline';
+    img-src 'self' 
+            data: 
+            https://www.google-analytics.com/
+            https://www.googletagmanager.com/;
+    font-src 'self' 
+             data:;
+    connect-src 'self' 
+                https://api.emailjs.com/
+                https://www.google-analytics.com/
+                https://www.googletagmanager.com/;
+    frame-src 'none';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self' 
+                https://api.emailjs.com/;
+    upgrade-insecure-requests;
+    block-all-mixed-content;
+">
+
+  <title>Rentrovio - Comprehensive Rent Management Platform</title>
+  <link rel="icon" type="image/png" href="assets/images/app_icon.png" />
+  <link rel="apple-touch-icon" href="assets/images/app_icon.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.min.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -106,7 +105,7 @@
       }
     </script>
 
-    <script type="application/ld+json">
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
@@ -141,7 +140,7 @@
       }
     </script>
 
-    <script type="application/ld+json">
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -155,997 +154,861 @@
         }
       }
     </script>
-  </head>
+</head>
 
-  <body>
-    <!-- Skip Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header -->
-    <header class="header" id="header" role="banner">
-      <div class="container">
-        <div class="header__content">
-          <div class="header__logo">
-            <a href="index.html">
-              <img
-                src="assets/images/logo.png"
-                alt="Rentrovio - Rent Management Platform"
-                class="header__logo-image"
-              />
-            </a>
-          </div>
-
-          <nav
-            class="header__navigation"
-            id="navigation"
-            role="navigation"
-            aria-label="Main navigation"
-          >
-            <ul class="header__nav-list">
-              <li class="header__nav-item">
-                <a
-                  href="#features"
-                  class="header__nav-link"
-                  aria-describedby="features-section"
-                  >Features</a
-                >
-              </li>
-              <li class="header__nav-item">
-                <a
-                  href="#user-roles"
-                  class="header__nav-link"
-                  aria-describedby="user-roles-section"
-                  >User Roles</a
-                >
-              </li>
-              <li class="header__nav-item">
-                <a
-                  href="#pricing"
-                  class="header__nav-link"
-                  aria-describedby="pricing-section"
-                  >Pricing</a
-                >
-              </li>
-              <li class="header__nav-item">
-                <a href="about.html" class="header__nav-link">About</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="careers.html" class="header__nav-link">Careers</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="blog.html" class="header__nav-link">Blog</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="contact.html" class="header__nav-link">Contact</a>
-              </li>
-            </ul>
-          </nav>
-
-          <div class="header__actions">
-            <a
-              href="#beta-signup"
-              class="btn btn--primary header__cta-button"
-              id="headerCTA"
-              aria-describedby="beta-signup"
-            >
-              Join Beta Waitlist
-            </a>
-            <button
-              id="mobileToggle"
-              class="header__mobile-toggle"
-              aria-controls="navigation"
-              aria-expanded="false"
-              aria-label="Toggle navigation menu"
-            >
-              <span class="header__mobile-toggle-icon"></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <main
-      class="hero-section"
-      id="main-content"
-      role="main"
-      aria-labelledby="hero-title"
-    >
-      <div class="container">
-        <div class="hero__content">
-          <div class="hero__text">
-            <h1 class="hero__title" id="hero-title">
-              Complete Rent Management Platform for
-              <span class="hero__title-highlight">Everyone</span>
-            </h1>
-            <p class="hero__description">
-              Streamline property management with our comprehensive solution
-              designed for landlords, tenants, and caretakers. Manage
-              properties, track payments, coordinate maintenance, and more - all
-              in one powerful platform.
-            </p>
-            <div class="hero__features" role="list" aria-label="Key features">
-              <div class="hero__feature" role="listitem">
-                <span
-                  class="hero__feature-icon"
-                  aria-hidden="true"
-                  style="--i: 0"
-                  >🏠</span
-                >
-                <span>Property Management</span>
-              </div>
-              <div class="hero__feature" role="listitem">
-                <span
-                  class="hero__feature-icon"
-                  aria-hidden="true"
-                  style="--i: 1"
-                  >💰</span
-                >
-                <span>Payment Processing</span>
-              </div>
-              <div class="hero__feature" role="listitem">
-                <span
-                  class="hero__feature-icon"
-                  aria-hidden="true"
-                  style="--i: 2"
-                  >🔧</span
-                >
-                <span>Maintenance Coordination</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero__signup">
-            <div class="beta-signup-card" id="beta-signup">
-              <h3 class="beta-signup-card__title">Join the Beta Waitlist</h3>
-              <p class="beta-signup-card__description">
-                Be the first to experience the future of rent management
-              </p>
-              <form
-                class="beta-signup-form"
-                id="betaSignupForm"
-                aria-label="Beta signup form"
-              >
-                <div class="beta-signup-form__input-group">
-                  <label for="emailInput" class="sr-only">Email address</label>
-                  <input
-                    type="email"
-                    class="beta-signup-form__input"
-                    placeholder="Enter your email address"
-                    required
-                    id="emailInput"
-                    aria-describedby="email-help"
-                    autocomplete="email"
-                  />
-                  <button
-                    type="submit"
-                    class="btn btn--primary beta-signup-form__button"
-                    aria-describedby="signup-benefits"
-                  >
-                    Join Waitlist
-                  </button>
-                </div>
-                <div id="email-help" class="sr-only">
-                  We'll send you early access information and updates about
-                  Rentrovio
-                </div>
-              </form>
-              <div
-                class="beta-signup-card__benefits"
-                id="signup-benefits"
-                role="list"
-                aria-label="Signup benefits"
-              >
-                <div class="benefit" role="listitem">
-                  <span class="benefit__icon" aria-hidden="true">✓</span>
-                  <span>Early access to beta</span>
-                </div>
-                <div class="benefit" role="listitem">
-                  <span class="benefit__icon" aria-hidden="true">✓</span>
-                  <span>First month free</span>
-                </div>
-                <div class="benefit" role="listitem">
-                  <span class="benefit__icon" aria-hidden="true">✓</span>
-                  <span>Priority support</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!-- Features Section -->
-    <section
-      class="features-section"
-      id="features"
-      aria-labelledby="features-title"
-    >
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title" id="features-title">
-            Why Choose Rentrovio?
-          </h2>
-          <p class="section-description">
-            Everything you need to manage properties efficiently, all in one
-            place
-          </p>
+  <!-- Header -->
+  <header class="header" id="header" role="banner">
+    <div class="container">
+      <div class="header__content">
+        <div class="header__logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="Rentrovio - Rent Management Platform" class="header__logo-image" />
+          </a>
         </div>
 
-        <div class="features-grid" role="list" aria-label="Platform features">
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">
-              <span>🏢</span>
-            </div>
-            <h3 class="feature-card__title">Property Portfolio Management</h3>
-            <p class="feature-card__description">
-              Manage multiple properties with ease. Track units, leases, and
-              tenant information all in one dashboard.
-            </p>
-          </article>
+        <nav class="header__navigation" id="navigation" role="navigation" aria-label="Main navigation">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#features" class="header__nav-link" aria-describedby="features-section">Features</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#user-roles" class="header__nav-link" aria-describedby="user-roles-section">User Roles</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#pricing" class="header__nav-link" aria-describedby="pricing-section">Pricing</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="about.html" class="header__nav-link">About</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="careers.html" class="header__nav-link">Careers</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="blog.html" class="header__nav-link">Blog</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="contact.html" class="header__nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
 
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">
-              <span>💳</span>
-            </div>
-            <h3 class="feature-card__title">Automated Payment Processing</h3>
-            <p class="feature-card__description">
-              Streamline rent collection with automated payments, late fee
-              tracking, and payment history.
-            </p>
-          </article>
-
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">
-              <span>🔧</span>
-            </div>
-            <h3 class="feature-card__title">Maintenance Coordination</h3>
-            <p class="feature-card__description">
-              Efficiently manage maintenance requests, track progress, and
-              coordinate with caretakers.
-            </p>
-          </article>
-
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">
-              <span>📊</span>
-            </div>
-            <h3 class="feature-card__title">Analytics & Reporting</h3>
-            <p class="feature-card__description">
-              Get insights into your property performance with comprehensive
-              analytics and reporting tools.
-            </p>
-          </article>
-
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">
-              <span>📱</span>
-            </div>
-            <h3 class="feature-card__title">Mobile-First Experience</h3>
-            <p class="feature-card__description">
-              Access your dashboard anywhere with our responsive design and
-              mobile-optimized interface.
-            </p>
-          </article>
-
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">
-              <span>🔒</span>
-            </div>
-            <h3 class="feature-card__title">Secure & Compliant</h3>
-            <p class="feature-card__description">
-              Bank-level security with compliance to industry standards and data
-              protection regulations.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- User Roles Section -->
-    <section class="user-roles-section" id="user-roles">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Built for Every User</h2>
-          <p class="section-description">
-            Tailored experiences for landlords, tenants, and caretakers
-          </p>
-        </div>
-
-        <div class="user-roles">
-          <div class="user-roles__tabs">
-            <button
-              class="user-roles__tab user-roles__tab--active"
-              data-role="landlord"
-            >
-              <span class="user-roles__tab-icon">🏠</span>
-              <span class="user-roles__tab-text">Landlord</span>
-            </button>
-            <button class="user-roles__tab" data-role="tenant">
-              <span class="user-roles__tab-icon">👤</span>
-              <span class="user-roles__tab-text">Tenant</span>
-            </button>
-            <button class="user-roles__tab" data-role="caretaker">
-              <span class="user-roles__tab-icon">🔧</span>
-              <span class="user-roles__tab-text">Caretaker</span>
-            </button>
-          </div>
-
-          <div class="user-roles__content">
-            <div
-              class="role-content role-content--active"
-              id="landlord-content"
-            >
-              <div class="role-info">
-                <h3 class="role-info__title">Landlord Dashboard</h3>
-                <p class="role-info__description">
-                  Comprehensive property management tools designed for landlords
-                </p>
-                <div class="role-navigation">
-                  <div class="role-navigation__tabs">
-                    <span class="nav-tab nav-tab--active">Home</span>
-                    <span class="nav-tab">Properties</span>
-                    <span class="nav-tab">Earnings</span>
-                    <span class="nav-tab">Staff</span>
-                    <span class="nav-tab">Analytics</span>
-                    <span class="nav-tab">Profile</span>
-                  </div>
-                </div>
-                <div class="role-features">
-                  <h4 class="role-features__title">Key Features</h4>
-                  <ul class="role-features__list">
-                    <li>Property portfolio management</li>
-                    <li>Revenue tracking and analytics</li>
-                    <li>Staff coordination tools</li>
-                    <li>Document management</li>
-                    <li>Maintenance oversight</li>
-                    <li>Bulk operations for efficiency</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="role-content" id="tenant-content">
-              <div class="role-info">
-                <h3 class="role-info__title">Tenant Portal</h3>
-                <p class="role-info__description">
-                  Streamlined rental experience for tenants
-                </p>
-                <div class="role-navigation">
-                  <div class="role-navigation__tabs">
-                    <span class="nav-tab nav-tab--active">Home</span>
-                    <span class="nav-tab">My Unit</span>
-                    <span class="nav-tab">Payments</span>
-                    <span class="nav-tab">Maintenance</span>
-                    <span class="nav-tab">Documents</span>
-                    <span class="nav-tab">Profile</span>
-                  </div>
-                </div>
-                <div class="role-features">
-                  <h4 class="role-features__title">Key Features</h4>
-                  <ul class="role-features__list">
-                    <li>Unit information and lease details</li>
-                    <li>Online payment processing</li>
-                    <li>Maintenance request system</li>
-                    <li>Payment history tracking</li>
-                    <li>Document access portal</li>
-                    <li>Request status monitoring</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="role-content" id="caretaker-content">
-              <div class="role-info">
-                <h3 class="role-info__title">Caretaker Interface</h3>
-                <p class="role-info__description">
-                  Efficient property maintenance coordination tools
-                </p>
-                <div class="role-navigation">
-                  <div class="role-navigation__tabs">
-                    <span class="nav-tab nav-tab--active">Home</span>
-                    <span class="nav-tab">Properties</span>
-                    <span class="nav-tab">Maintenance</span>
-                    <span class="nav-tab">Overdue</span>
-                    <span class="nav-tab">Utilities</span>
-                    <span class="nav-tab">Profile</span>
-                  </div>
-                </div>
-                <div class="role-features">
-                  <h4 class="role-features__title">Key Features</h4>
-                  <ul class="role-features__list">
-                    <li>Multi-property oversight</li>
-                    <li>Task management system</li>
-                    <li>Utility monitoring</li>
-                    <li>Tenant communication tools</li>
-                    <li>Property analytics</li>
-                    <li>Maintenance scheduling</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing-section" id="pricing">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Simple, Transparent Pricing</h2>
-          <p class="section-description">
-            Get started with our comprehensive rent management platform
-          </p>
-        </div>
-
-        <div class="pricing-card">
-          <div class="coming-soon-badge">
-            <span class="coming-soon-badge__text">Coming Soon</span>
-          </div>
-          <div class="pricing-card__header">
-            <h3 class="pricing-card__title">Landlord Pro</h3>
-            <div class="pricing-card__price">
-              <span class="pricing-card__amount">$11.99</span>
-              <span class="pricing-card__period">/month</span>
-            </div>
-            <p class="pricing-card__subtitle">First month absolutely free</p>
-          </div>
-
-          <div class="pricing-card__features">
-            <h4 class="pricing-card__features-title">Everything included:</h4>
-            <ul class="pricing-card__features-list">
-              <li class="pricing-feature">
-                <span class="pricing-feature__icon">✓</span>
-                <span>Unlimited properties</span>
-              </li>
-              <li class="pricing-feature">
-                <span class="pricing-feature__icon">✓</span>
-                <span>Unlimited tenants</span>
-              </li>
-              <li class="pricing-feature">
-                <span class="pricing-feature__icon">✓</span>
-                <span>Payment processing</span>
-              </li>
-              <li class="pricing-feature">
-                <span class="pricing-feature__icon">✓</span>
-                <span>Maintenance management</span>
-              </li>
-              <li class="pricing-feature">
-                <span class="pricing-feature__icon">✓</span>
-                <span>Analytics & reporting</span>
-              </li>
-              <li class="pricing-feature">
-                <span class="pricing-feature__icon">✓</span>
-                <span>24/7 support</span>
-              </li>
-              <li class="pricing-feature">
-                <span class="pricing-feature__icon">✓</span>
-                <span>Mobile app access</span>
-              </li>
-            </ul>
-          </div>
-          <button class="btn btn--primary pricing-card__button">
+        <div class="header__actions">
+          <a href="#beta-signup" class="btn btn--primary header__cta-button" id="headerCTA"
+            aria-describedby="beta-signup">
             Join Beta Waitlist
+          </a>
+          <button id="mobileToggle" class="header__mobile-toggle" aria-controls="navigation" aria-expanded="false"
+            aria-label="Toggle navigation menu">
+            <span class="header__mobile-toggle-icon"></span>
           </button>
         </div>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Our Beta Users Say</h2>
-          <p class="section-description">
-            Early feedback from property management professionals
+  <!-- Hero Section -->
+  <main class="hero-section" id="main-content" role="main" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__text">
+          <h1 class="hero__title" id="hero-title">
+            Complete Rent Management Platform for
+            <span class="hero__title-highlight">Everyone</span>
+          </h1>
+          <p class="hero__description">
+            Streamline property management with our comprehensive solution
+            designed for landlords, tenants, and caretakers. Manage
+            properties, track payments, coordinate maintenance, and more - all
+            in one powerful platform.
           </p>
+          <div class="hero__features" role="list" aria-label="Key features">
+            <div class="hero__feature" role="listitem">
+              <span class="hero__feature-icon" aria-hidden="true" style="--i: 0">🏠</span>
+              <span>Property Management</span>
+            </div>
+            <div class="hero__feature" role="listitem">
+              <span class="hero__feature-icon" aria-hidden="true" style="--i: 1">💰</span>
+              <span>Payment Processing</span>
+            </div>
+            <div class="hero__feature" role="listitem">
+              <span class="hero__feature-icon" aria-hidden="true" style="--i: 2">🔧</span>
+              <span>Maintenance Coordination</span>
+            </div>
+          </div>
         </div>
 
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-card__content">
-              <p class="testimonial-card__text">
-                "Rentrovio has completely transformed how I manage my rental
-                properties. The intuitive interface and comprehensive features
-                make everything so much easier."
-              </p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">
-                  <span>SM</span>
-                </div>
-                <div class="testimonial-card__info">
-                  <h4 class="testimonial-card__name">Sarah Mitchell</h4>
-                  <p class="testimonial-card__role">Property Owner, 15 units</p>
-                </div>
+        <div class="hero__signup">
+          <div class="beta-signup-card" id="beta-signup">
+            <h3 class="beta-signup-card__title">Join the Beta Waitlist</h3>
+            <p class="beta-signup-card__description">
+              Be the first to experience the future of rent management
+            </p>
+            <form class="beta-signup-form" id="betaSignupForm" aria-label="Beta signup form">
+              <div class="beta-signup-form__input-group">
+                <label for="emailInput" class="sr-only">Email address</label>
+                <input type="email" class="beta-signup-form__input" placeholder="Enter your email address" required
+                  id="emailInput" aria-describedby="email-help" autocomplete="email" />
+                <button type="submit" class="btn btn--primary beta-signup-form__button"
+                  aria-describedby="signup-benefits">
+                  Join Waitlist
+                </button>
               </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-card__content">
-              <p class="testimonial-card__text">
-                "As a tenant, I love how easy it is to pay rent, request
-                maintenance, and communicate with my landlord all through one
-                platform."
-              </p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">
-                  <span>JD</span>
-                </div>
-                <div class="testimonial-card__info">
-                  <h4 class="testimonial-card__name">James Davis</h4>
-                  <p class="testimonial-card__role">Tenant</p>
-                </div>
+              <div id="email-help" class="sr-only">
+                We'll send you early access information and updates about
+                Rentrovio
               </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-card__content">
-              <p class="testimonial-card__text">
-                "The caretaker tools are fantastic. I can efficiently manage
-                maintenance across multiple properties and keep everyone
-                informed."
-              </p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">
-                  <span>MR</span>
-                </div>
-                <div class="testimonial-card__info">
-                  <h4 class="testimonial-card__name">Maria Rodriguez</h4>
-                  <p class="testimonial-card__role">Property Caretaker</p>
-                </div>
+            </form>
+            <div class="beta-signup-card__benefits" id="signup-benefits" role="list" aria-label="Signup benefits">
+              <div class="benefit" role="listitem">
+                <span class="benefit__icon" aria-hidden="true">✓</span>
+                <span>Early access to beta</span>
+              </div>
+              <div class="benefit" role="listitem">
+                <span class="benefit__icon" aria-hidden="true">✓</span>
+                <span>First month free</span>
+              </div>
+              <div class="benefit" role="listitem">
+                <span class="benefit__icon" aria-hidden="true">✓</span>
+                <span>Priority support</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </main>
 
-    <!-- Blog Section -->
-    <section class="blog-section" id="blog-preview">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Latest Insights</h2>
-          <p class="section-description">
-            Stay updated with the latest property management tips, trends, and industry insights
+  <!-- Features Section -->
+  <section class="features-section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="features-title">
+          Why Choose Rentrovio?
+        </h2>
+        <p class="section-description">
+          Everything you need to manage properties efficiently, all in one
+          place
+        </p>
+      </div>
+
+      <div class="features-grid" role="list" aria-label="Platform features">
+        <article class="feature-card" role="listitem">
+          <div class="feature-card__icon" aria-hidden="true">
+            <span>🏢</span>
+          </div>
+          <h3 class="feature-card__title">Property Portfolio Management</h3>
+          <p class="feature-card__description">
+            Manage multiple properties with ease. Track units, leases, and
+            tenant information all in one dashboard.
           </p>
+        </article>
+
+        <article class="feature-card" role="listitem">
+          <div class="feature-card__icon" aria-hidden="true">
+            <span>💳</span>
+          </div>
+          <h3 class="feature-card__title">Automated Payment Processing</h3>
+          <p class="feature-card__description">
+            Streamline rent collection with automated payments, late fee
+            tracking, and payment history.
+          </p>
+        </article>
+
+        <article class="feature-card" role="listitem">
+          <div class="feature-card__icon" aria-hidden="true">
+            <span>🔧</span>
+          </div>
+          <h3 class="feature-card__title">Maintenance Coordination</h3>
+          <p class="feature-card__description">
+            Efficiently manage maintenance requests, track progress, and
+            coordinate with caretakers.
+          </p>
+        </article>
+
+        <article class="feature-card" role="listitem">
+          <div class="feature-card__icon" aria-hidden="true">
+            <span>📊</span>
+          </div>
+          <h3 class="feature-card__title">Analytics & Reporting</h3>
+          <p class="feature-card__description">
+            Get insights into your property performance with comprehensive
+            analytics and reporting tools.
+          </p>
+        </article>
+
+        <article class="feature-card" role="listitem">
+          <div class="feature-card__icon" aria-hidden="true">
+            <span>📱</span>
+          </div>
+          <h3 class="feature-card__title">Mobile-First Experience</h3>
+          <p class="feature-card__description">
+            Access your dashboard anywhere with our responsive design and
+            mobile-optimized interface.
+          </p>
+        </article>
+
+        <article class="feature-card" role="listitem">
+          <div class="feature-card__icon" aria-hidden="true">
+            <span>🔒</span>
+          </div>
+          <h3 class="feature-card__title">Secure & Compliant</h3>
+          <p class="feature-card__description">
+            Bank-level security with compliance to industry standards and data
+            protection regulations.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Roles Section -->
+  <section class="user-roles-section" id="user-roles">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Built for Every User</h2>
+        <p class="section-description">
+          Tailored experiences for landlords, tenants, and caretakers
+        </p>
+      </div>
+
+      <div class="user-roles">
+        <div class="user-roles__tabs">
+          <button class="user-roles__tab user-roles__tab--active" data-role="landlord">
+            <span class="user-roles__tab-icon">🏠</span>
+            <span class="user-roles__tab-text">Landlord</span>
+          </button>
+          <button class="user-roles__tab" data-role="tenant">
+            <span class="user-roles__tab-icon">👤</span>
+            <span class="user-roles__tab-text">Tenant</span>
+          </button>
+          <button class="user-roles__tab" data-role="caretaker">
+            <span class="user-roles__tab-icon">🔧</span>
+            <span class="user-roles__tab-text">Caretaker</span>
+          </button>
         </div>
 
-        <div class="blog-preview-grid">
-          <article class="blog-preview-card">
-            <a href="blogs/essential-property-management-kpis.html" class="blog-preview-card__link" aria-label="Read full article: 10 Essential Property Management KPIs Every Landlord Should Track">
-              <div class="blog-preview-card__image">
-                <div class="blog-preview-card__image-placeholder">
-                  <span>📊</span>
+        <div class="user-roles__content">
+          <div class="role-content role-content--active" id="landlord-content">
+            <div class="role-info">
+              <h3 class="role-info__title">Landlord Dashboard</h3>
+              <p class="role-info__description">
+                Comprehensive property management tools designed for landlords
+              </p>
+              <div class="role-navigation">
+                <div class="role-navigation__tabs">
+                  <span class="nav-tab nav-tab--active">Home</span>
+                  <span class="nav-tab">Properties</span>
+                  <span class="nav-tab">Earnings</span>
+                  <span class="nav-tab">Staff</span>
+                  <span class="nav-tab">Analytics</span>
+                  <span class="nav-tab">Profile</span>
                 </div>
               </div>
-              <div class="blog-preview-card__content">
-                <div class="blog-preview-card__meta">
-                  <span class="blog-preview-card__category">Tips & Guides</span>
-                  <span class="blog-preview-card__date">December 15, 2024</span>
-                </div>
-                <h3 class="blog-preview-card__title">
-                  10 Essential Property Management KPIs Every Landlord Should Track
-                </h3>
-                <p class="blog-preview-card__excerpt">
-                  Discover the key performance indicators that successful property managers use to optimize their operations and maximize returns.
-                </p>
-                <div class="blog-preview-card__author">
-                  <div class="blog-preview-card__author-avatar">
-                    <span>AJ</span>
-                  </div>
-                  <div class="blog-preview-card__author-info">
-                    <span class="blog-preview-card__author-name">Arjav Jain</span>
-                    <span class="blog-preview-card__author-role">CEO</span>
-                  </div>
-                </div>
+              <div class="role-features">
+                <h4 class="role-features__title">Key Features</h4>
+                <ul class="role-features__list">
+                  <li>Property portfolio management</li>
+                  <li>Revenue tracking and analytics</li>
+                  <li>Staff coordination tools</li>
+                  <li>Document management</li>
+                  <li>Maintenance oversight</li>
+                  <li>Bulk operations for efficiency</li>
+                </ul>
               </div>
-            </a>
-          </article>
+            </div>
+          </div>
 
-          <article class="blog-preview-card">
-            <a href="blogs/ai-revolutionizing-property-management.html" class="blog-preview-card__link" aria-label="Read full article: How AI is Revolutionizing Property Management">
-              <div class="blog-preview-card__image">
-                <div class="blog-preview-card__image-placeholder">
-                  <span>🤖</span>
+          <div class="role-content" id="tenant-content">
+            <div class="role-info">
+              <h3 class="role-info__title">Tenant Portal</h3>
+              <p class="role-info__description">
+                Streamlined rental experience for tenants
+              </p>
+              <div class="role-navigation">
+                <div class="role-navigation__tabs">
+                  <span class="nav-tab nav-tab--active">Home</span>
+                  <span class="nav-tab">My Unit</span>
+                  <span class="nav-tab">Payments</span>
+                  <span class="nav-tab">Maintenance</span>
+                  <span class="nav-tab">Documents</span>
+                  <span class="nav-tab">Profile</span>
                 </div>
               </div>
-              <div class="blog-preview-card__content">
-                <div class="blog-preview-card__meta">
-                  <span class="blog-preview-card__category">Technology</span>
-                  <span class="blog-preview-card__date">December 10, 2024</span>
-                </div>
-                <h3 class="blog-preview-card__title">
-                  How AI is Revolutionizing Property Management
-                </h3>
-                <p class="blog-preview-card__excerpt">
-                  Explore how artificial intelligence and automation are transforming the way property managers handle maintenance, tenant screening, and operations.
-                </p>
-                <div class="blog-preview-card__author">
-                  <div class="blog-preview-card__author-avatar">
-                    <span>AJ</span>
-                  </div>
-                  <div class="blog-preview-card__author-info">
-                    <span class="blog-preview-card__author-name">Arjav Jain</span>
-                    <span class="blog-preview-card__author-role">CEO</span>
-                  </div>
-                </div>
+              <div class="role-features">
+                <h4 class="role-features__title">Key Features</h4>
+                <ul class="role-features__list">
+                  <li>Unit information and lease details</li>
+                  <li>Online payment processing</li>
+                  <li>Maintenance request system</li>
+                  <li>Payment history tracking</li>
+                  <li>Document access portal</li>
+                  <li>Request status monitoring</li>
+                </ul>
               </div>
-            </a>
-          </article>
+            </div>
+          </div>
 
-          <article class="blog-preview-card">
-            <a href="blogs/2025-rental-market-trends.html" class="blog-preview-card__link" aria-label="Read full article: 2025 Rental Market Trends: What Property Managers Need to Know">
-              <div class="blog-preview-card__image">
-                <div class="blog-preview-card__image-placeholder">
-                  <span>📈</span>
+          <div class="role-content" id="caretaker-content">
+            <div class="role-info">
+              <h3 class="role-info__title">Caretaker Interface</h3>
+              <p class="role-info__description">
+                Efficient property maintenance coordination tools
+              </p>
+              <div class="role-navigation">
+                <div class="role-navigation__tabs">
+                  <span class="nav-tab nav-tab--active">Home</span>
+                  <span class="nav-tab">Properties</span>
+                  <span class="nav-tab">Maintenance</span>
+                  <span class="nav-tab">Overdue</span>
+                  <span class="nav-tab">Utilities</span>
+                  <span class="nav-tab">Profile</span>
                 </div>
               </div>
-              <div class="blog-preview-card__content">
-                <div class="blog-preview-card__meta">
-                  <span class="blog-preview-card__category">Industry News</span>
-                  <span class="blog-preview-card__date">December 5, 2024</span>
-                </div>
-                <h3 class="blog-preview-card__title">
-                  2025 Rental Market Trends: What Property Managers Need to Know
-                </h3>
-                <p class="blog-preview-card__excerpt">
-                  Stay ahead of the curve with our analysis of emerging trends in the rental market and their implications for property management.
-                </p>
-                <div class="blog-preview-card__author">
-                  <div class="blog-preview-card__author-avatar">
-                    <span>AJ</span>
-                  </div>
-                  <div class="blog-preview-card__author-info">
-                    <span class="blog-preview-card__author-name">Arjav Jain</span>
-                    <span class="blog-preview-card__author-role">CEO</span>
-                  </div>
-                </div>
+              <div class="role-features">
+                <h4 class="role-features__title">Key Features</h4>
+                <ul class="role-features__list">
+                  <li>Multi-property oversight</li>
+                  <li>Task management system</li>
+                  <li>Utility monitoring</li>
+                  <li>Tenant communication tools</li>
+                  <li>Property analytics</li>
+                  <li>Maintenance scheduling</li>
+                </ul>
               </div>
-            </a>
-          </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-description">
+          Get started with our comprehensive rent management platform
+        </p>
+      </div>
+
+      <div class="pricing-card">
+        <div class="coming-soon-badge">
+          <span class="coming-soon-badge__text">Coming Soon</span>
+        </div>
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Landlord Pro</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$11.99</span>
+            <span class="pricing-card__period">/month</span>
+          </div>
+          <p class="pricing-card__subtitle">First month absolutely free</p>
         </div>
 
-        <div class="blog-section__cta">
-          <a href="blog.html" class="btn blog-section__button">
-            View All Articles
+        <div class="pricing-card__features">
+          <h4 class="pricing-card__features-title">Everything included:</h4>
+          <ul class="pricing-card__features-list">
+            <li class="pricing-feature">
+              <span class="pricing-feature__icon">✓</span>
+              <span>Unlimited properties</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__icon">✓</span>
+              <span>Unlimited tenants</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__icon">✓</span>
+              <span>Payment processing</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__icon">✓</span>
+              <span>Maintenance management</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__icon">✓</span>
+              <span>Analytics & reporting</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__icon">✓</span>
+              <span>24/7 support</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__icon">✓</span>
+              <span>Mobile app access</span>
+            </li>
+          </ul>
+        </div>
+        <button class="btn btn--primary pricing-card__button">
+          Join Beta Waitlist
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What Our Beta Users Say</h2>
+        <p class="section-description">
+          Early feedback from property management professionals
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__content">
+            <p class="testimonial-card__text">
+              "Rentrovio has completely transformed how I manage my rental
+              properties. The intuitive interface and comprehensive features
+              make everything so much easier."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <span>SM</span>
+              </div>
+              <div class="testimonial-card__info">
+                <h4 class="testimonial-card__name">Sarah Mitchell</h4>
+                <p class="testimonial-card__role">Property Owner, 15 units</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__content">
+            <p class="testimonial-card__text">
+              "As a tenant, I love how easy it is to pay rent, request
+              maintenance, and communicate with my landlord all through one
+              platform."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <span>JD</span>
+              </div>
+              <div class="testimonial-card__info">
+                <h4 class="testimonial-card__name">James Davis</h4>
+                <p class="testimonial-card__role">Tenant</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__content">
+            <p class="testimonial-card__text">
+              "The caretaker tools are fantastic. I can efficiently manage
+              maintenance across multiple properties and keep everyone
+              informed."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <span>MR</span>
+              </div>
+              <div class="testimonial-card__info">
+                <h4 class="testimonial-card__name">Maria Rodriguez</h4>
+                <p class="testimonial-card__role">Property Caretaker</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog-section" id="blog-preview">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Latest Insights</h2>
+        <p class="section-description">
+          Stay updated with the latest property management tips, trends, and industry insights
+        </p>
+      </div>
+
+      <div class="blog-preview-grid">
+        <article class="blog-preview-card">
+          <a href="blogs/essential-property-management-kpis.html" class="blog-preview-card__link"
+            aria-label="Read full article: 10 Essential Property Management KPIs Every Landlord Should Track">
+            <div class="blog-preview-card__image">
+              <div class="blog-preview-card__image-placeholder">
+                <span>📊</span>
+              </div>
+            </div>
+            <div class="blog-preview-card__content">
+              <div class="blog-preview-card__meta">
+                <span class="blog-preview-card__category">Tips & Guides</span>
+                <span class="blog-preview-card__date">December 15, 2024</span>
+              </div>
+              <h3 class="blog-preview-card__title">
+                10 Essential Property Management KPIs Every Landlord Should Track
+              </h3>
+              <p class="blog-preview-card__excerpt">
+                Discover the key performance indicators that successful property managers use to optimize their
+                operations and maximize returns.
+              </p>
+              <div class="blog-preview-card__author">
+                <div class="blog-preview-card__author-avatar">
+                  <span>AJ</span>
+                </div>
+                <div class="blog-preview-card__author-info">
+                  <span class="blog-preview-card__author-name">Arjav Jain</span>
+                  <span class="blog-preview-card__author-role">CEO</span>
+                </div>
+              </div>
+            </div>
           </a>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <!-- Contact Us Section -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get in Touch</h2>
-          <p class="section-description">
-            Have questions? We'd love to hear from you. Send us a message and
-            we'll respond as soon as possible.
-          </p>
-        </div>
-
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="contact-info-card">
-              <div class="contact-item">
-                <div class="contact-item__icon">
-                  <span>📧</span>
-                </div>
-                <div class="contact-item__content">
-                  <h3 class="contact-item__title">Email Us</h3>
-                  <p class="contact-item__text">hello@rentrovio.com</p>
-                  <a
-                    href="mailto:hello@rentrovio.com"
-                    class="contact-item__link"
-                    >Send an email</a
-                  >
-                </div>
+        <article class="blog-preview-card">
+          <a href="blogs/ai-revolutionizing-property-management.html" class="blog-preview-card__link"
+            aria-label="Read full article: How AI is Revolutionizing Property Management">
+            <div class="blog-preview-card__image">
+              <div class="blog-preview-card__image-placeholder">
+                <span>🤖</span>
               </div>
-
-              <div class="contact-item">
-                <div class="contact-item__icon">
-                  <span>⏰</span>
-                </div>
-                <div class="contact-item__content">
-                  <h3 class="contact-item__title">Response Time</h3>
-                  <p class="contact-item__text">Within 24 hours</p>
-                  <p class="contact-item__subtext">
-                    We're committed to quick responses
-                  </p>
-                </div>
+            </div>
+            <div class="blog-preview-card__content">
+              <div class="blog-preview-card__meta">
+                <span class="blog-preview-card__category">Technology</span>
+                <span class="blog-preview-card__date">December 10, 2024</span>
               </div>
-
-              <div class="contact-item">
-                <div class="contact-item__icon">
-                  <span>🎯</span>
+              <h3 class="blog-preview-card__title">
+                How AI is Revolutionizing Property Management
+              </h3>
+              <p class="blog-preview-card__excerpt">
+                Explore how artificial intelligence and automation are transforming the way property managers handle
+                maintenance, tenant screening, and operations.
+              </p>
+              <div class="blog-preview-card__author">
+                <div class="blog-preview-card__author-avatar">
+                  <span>AJ</span>
                 </div>
-                <div class="contact-item__content">
-                  <h3 class="contact-item__title">Beta Program</h3>
-                  <p class="contact-item__text">Join our waitlist</p>
-                  <p class="contact-item__subtext">
-                    Be first to access new features
-                  </p>
+                <div class="blog-preview-card__author-info">
+                  <span class="blog-preview-card__author-name">Arjav Jain</span>
+                  <span class="blog-preview-card__author-role">CEO</span>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
+        </article>
 
-          <div class="contact-form-container">
-            <form class="contact-form" id="contactForm">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="contactName" class="form-label"
-                    >Full Name *</label
-                  >
-                  <input
-                    type="text"
-                    id="contactName"
-                    name="name"
-                    class="form-input"
-                    placeholder="Enter your full name"
-                    required
-                  />
+        <article class="blog-preview-card">
+          <a href="blogs/2025-rental-market-trends.html" class="blog-preview-card__link"
+            aria-label="Read full article: 2025 Rental Market Trends: What Property Managers Need to Know">
+            <div class="blog-preview-card__image">
+              <div class="blog-preview-card__image-placeholder">
+                <span>📈</span>
+              </div>
+            </div>
+            <div class="blog-preview-card__content">
+              <div class="blog-preview-card__meta">
+                <span class="blog-preview-card__category">Industry News</span>
+                <span class="blog-preview-card__date">December 5, 2024</span>
+              </div>
+              <h3 class="blog-preview-card__title">
+                2025 Rental Market Trends: What Property Managers Need to Know
+              </h3>
+              <p class="blog-preview-card__excerpt">
+                Stay ahead of the curve with our analysis of emerging trends in the rental market and their implications
+                for property management.
+              </p>
+              <div class="blog-preview-card__author">
+                <div class="blog-preview-card__author-avatar">
+                  <span>AJ</span>
                 </div>
-
-                <div class="form-group">
-                  <label for="contactEmail" class="form-label"
-                    >Email Address *</label
-                  >
-                  <input
-                    type="email"
-                    id="contactEmail"
-                    name="email"
-                    class="form-input"
-                    placeholder="Enter your email address"
-                    required
-                  />
+                <div class="blog-preview-card__author-info">
+                  <span class="blog-preview-card__author-name">Arjav Jain</span>
+                  <span class="blog-preview-card__author-role">CEO</span>
                 </div>
               </div>
+            </div>
+          </a>
+        </article>
+      </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="contactSubject" class="form-label"
-                    >Subject *</label
-                  >
-                  <select
-                    id="contactSubject"
-                    name="subject"
-                    class="form-select"
-                    required
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Beta Access Request">
-                      Beta Access Request
-                    </option>
-                    <option value="Partnership Opportunity">
-                      Partnership Opportunity
-                    </option>
-                    <option value="Technical Support">Technical Support</option>
-                    <option value="Feature Request">Feature Request</option>
-                    <option value="Media Inquiry">Media Inquiry</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
+      <div class="blog-section__cta">
+        <a href="blog.html" class="btn blog-section__button">
+          View All Articles
+        </a>
+      </div>
+    </div>
+  </section>
 
-                <div class="form-group">
-                  <label class="form-label">I am a:</label>
-                  <div class="radio-group">
-                    <label class="radio-option">
-                      <input
-                        type="radio"
-                        name="userType"
-                        value="landlord"
-                        checked
-                      />
-                      <span class="radio-custom"></span>
-                      <span class="radio-label">Landlord</span>
-                    </label>
-                    <label class="radio-option">
-                      <input type="radio" name="userType" value="tenant" />
-                      <span class="radio-custom"></span>
-                      <span class="radio-label">Tenant</span>
-                    </label>
-                    <label class="radio-option">
-                      <input type="radio" name="userType" value="caretaker" />
-                      <span class="radio-custom"></span>
-                      <span class="radio-label">Caretaker</span>
-                    </label>
-                    <label class="radio-option">
-                      <input type="radio" name="userType" value="other" />
-                      <span class="radio-custom"></span>
-                      <span class="radio-label">Other</span>
-                    </label>
-                  </div>
-                </div>
+  <!-- Contact Us Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-description">
+          Have questions? We'd love to hear from you. Send us a message and
+          we'll respond as soon as possible.
+        </p>
+      </div>
+
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-info-card">
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <span>📧</span>
+              </div>
+              <div class="contact-item__content">
+                <h3 class="contact-item__title">Email Us</h3>
+                <p class="contact-item__text">hello@rentrovio.com</p>
+                <a href="mailto:hello@rentrovio.com" class="contact-item__link">Send an email</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <span>⏰</span>
+              </div>
+              <div class="contact-item__content">
+                <h3 class="contact-item__title">Response Time</h3>
+                <p class="contact-item__text">Within 24 hours</p>
+                <p class="contact-item__subtext">
+                  We're committed to quick responses
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <span>🎯</span>
+              </div>
+              <div class="contact-item__content">
+                <h3 class="contact-item__title">Beta Program</h3>
+                <p class="contact-item__text">Join our waitlist</p>
+                <p class="contact-item__subtext">
+                  Be first to access new features
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Full Name *</label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="Enter your full name"
+                  required />
               </div>
 
               <div class="form-group">
-                <label for="contactMessage" class="form-label">Message *</label>
-                <textarea
-                  id="contactMessage"
-                  name="message"
-                  class="form-textarea"
-                  rows="5"
-                  placeholder="Tell us about your inquiry or how we can help you..."
-                  required
-                ></textarea>
+                <label for="contactEmail" class="form-label">Email Address *</label>
+                <input type="email" id="contactEmail" name="email" class="form-input"
+                  placeholder="Enter your email address" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactSubject" class="form-label">Subject *</label>
+                <select id="contactSubject" name="subject" class="form-select" required>
+                  <option value="">Select a subject</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Beta Access Request">
+                    Beta Access Request
+                  </option>
+                  <option value="Partnership Opportunity">
+                    Partnership Opportunity
+                  </option>
+                  <option value="Technical Support">Technical Support</option>
+                  <option value="Feature Request">Feature Request</option>
+                  <option value="Media Inquiry">Media Inquiry</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
 
-              <div class="form-actions">
-                <button
-                  type="submit"
-                  class="btn btn--primary contact-form__submit"
-                >
-                  <span class="submit-text">Send Message</span>
-                  <span class="submit-loading" style="display: none"
-                    >Sending...</span
-                  >
-                </button>
-                <p class="form-note">
-                  * Required fields. We'll respond within 24 hours.
-                </p>
+              <div class="form-group">
+                <label class="form-label">I am a:</label>
+                <div class="radio-group">
+                  <label class="radio-option">
+                    <input type="radio" name="userType" value="landlord" checked />
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Landlord</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="userType" value="tenant" />
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Tenant</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="userType" value="caretaker" />
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Caretaker</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="userType" value="other" />
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Other</span>
+                  </label>
+                </div>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+            </div>
 
-    <!-- Footer -->
-    <footer class="footer" id="about">
-      <div class="container">
-        <div class="footer__content">
-          <div class="footer__main">
-            <div class="footer__brand">
-              <img
-                src="assets/images/logo.png"
-                alt="Rentrovio"
-                class="footer__logo"
-              />
-              <p class="footer__description">
-                Comprehensive rent management platform designed for landlords,
-                tenants, and caretakers.
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Message *</label>
+              <textarea id="contactMessage" name="message" class="form-textarea" rows="5"
+                placeholder="Tell us about your inquiry or how we can help you..." required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary contact-form__submit">
+                <span class="submit-text">Send Message</span>
+                <span class="submit-loading" style="display: none">Sending...</span>
+              </button>
+              <p class="form-note">
+                * Required fields. We'll respond within 24 hours.
               </p>
-              <div class="footer__social">
-                <a href="https://x.com/rentrovio" class="footer__social-link" aria-label="Twitter">
-                  <span>𝕏</span>
-                </a>
-                <a href="https://www.linkedin.com/company/rentrovio/" class="footer__social-link" aria-label="LinkedIn">
-                  <span>in</span>
-                </a>
-                <a href="#" class="footer__social-link" aria-label="Facebook">
-                  <span>f</span>
-                </a>
-              </div>
             </div>
-
-            <div class="footer__links">
-              <div class="footer__column">
-                <h4 class="footer__column-title">Product</h4>
-                <ul class="footer__link-list">
-                  <li><a href="../index.html#features" class="footer__link">Features</a></li>
-                  <li>
-                    <a href="../index.html#user-roles" class="footer__link">User Roles</a>
-                  </li>
-                  <li><a href="../index.html#pricing" class="footer__link">Pricing</a></li>
-                  <li><a href="#" class="footer__link">Security</a></li>
-                </ul>
-              </div>
-
-              <div class="footer__column">
-                <h4 class="footer__column-title">Company</h4>
-                <ul class="footer__link-list">
-                  <li><a href="about.html" class="footer__link">About</a></li>
-                  <li>
-                    <a href="careers.html" class="footer__link">Careers</a>
-                  </li>
-                  <li><a href="blog.html" class="footer__link">Blog</a></li>
-                  <li>
-                    <a href="contact.html" class="footer__link">Contact</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="footer__column">
-                <h4 class="footer__column-title">Contact</h4>
-                <ul class="footer__contact-list">
-                  <li class="footer__contact-item">
-                    <span class="footer__contact-icon">📧</span>
-                    <div class="footer__contact-content">
-                      <a
-                        href="mailto:hello@rentrovio.com"
-                        class="footer__contact-link"
-                      >
-                        hello@rentrovio.com
-                      </a>
-                      <span class="footer__contact-label"
-                        >General inquiries</span
-                      >
-                    </div>
-                  </li>
-                  <li class="footer__contact-item">
-                    <span class="footer__contact-icon">💬</span>
-                    <div class="footer__contact-content">
-                      <a href="#contact" class="footer__contact-link">
-                        Send Message
-                      </a>
-                      <span class="footer__contact-label">Contact form</span>
-                    </div>
-                  </li>
-                  <li class="footer__contact-item">
-                    <span class="footer__contact-icon">⏰</span>
-                    <div class="footer__contact-content">
-                      <span class="footer__contact-link">24-hour response</span>
-                      <span class="footer__contact-label">Our commitment</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="footer__column">
-                <h4 class="footer__column-title">Support</h4>
-                <ul class="footer__link-list">
-                  <li><a href="#" class="footer__link">Help Center</a></li>
-                  <li><a href="#" class="footer__link">Documentation</a></li>
-                  <li><a href="#" class="footer__link">API Reference</a></li>
-                  <li><a href="#" class="footer__link">Status</a></li>
-                </ul>
-              </div>
-
-              <div class="footer__column">
-                <h4 class="footer__column-title">Legal</h4>
-                <ul class="footer__link-list">
-                  <li>
-                    <a href="privacy-policy.html" class="footer__link"
-                      >Privacy Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a href="terms-of-service.html" class="footer__link"
-                      >Terms of Service</a
-                    >
-                  </li>
-                  <li>
-                    <a href="cookie-policy.html" class="footer__link"
-                      >Cookie Policy</a
-                    >
-                  </li>
-                  <li><a href="gdpr.html" class="footer__link">GDPR</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer__bottom">
-            <p class="footer__copyright">
-              © 2024 Rentrovio. All rights reserved.
-            </p>
-            <p class="footer__made-with">
-              Made with ❤️ for property management professionals
-            </p>
-          </div>
+          </form>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="script.min.js"></script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-02JP977M3X"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+  <!-- Footer -->
+  <footer class="footer" id="about">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__main">
+          <div class="footer__brand">
+            <img src="assets/images/logo.png" alt="Rentrovio" class="footer__logo" />
+            <p class="footer__description">
+              Comprehensive rent management platform designed for landlords,
+              tenants, and caretakers.
+            </p>
+            <div class="footer__social">
+              <a href="https://x.com/rentrovio" class="footer__social-link" aria-label="Twitter">
+                <span>𝕏</span>
+              </a>
+              <a href="https://www.linkedin.com/company/rentrovio/" class="footer__social-link" aria-label="LinkedIn">
+                <span>in</span>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="Facebook">
+                <span>f</span>
+              </a>
+            </div>
+          </div>
 
-      gtag("config", "G-02JP977M3X");
-    </script>
-  </body>
+          <div class="footer__links">
+            <div class="footer__column">
+              <h4 class="footer__column-title">Product</h4>
+              <ul class="footer__link-list">
+                <li><a href="../index.html#features" class="footer__link">Features</a></li>
+                <li>
+                  <a href="../index.html#user-roles" class="footer__link">User Roles</a>
+                </li>
+                <li><a href="../index.html#pricing" class="footer__link">Pricing</a></li>
+                <li><a href="#" class="footer__link">Security</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h4 class="footer__column-title">Company</h4>
+              <ul class="footer__link-list">
+                <li><a href="about.html" class="footer__link">About</a></li>
+                <li>
+                  <a href="careers.html" class="footer__link">Careers</a>
+                </li>
+                <li><a href="blog.html" class="footer__link">Blog</a></li>
+                <li>
+                  <a href="contact.html" class="footer__link">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h4 class="footer__column-title">Contact</h4>
+              <ul class="footer__contact-list">
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">📧</span>
+                  <div class="footer__contact-content">
+                    <a href="mailto:hello@rentrovio.com" class="footer__contact-link">
+                      hello@rentrovio.com
+                    </a>
+                    <span class="footer__contact-label">General inquiries</span>
+                  </div>
+                </li>
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">💬</span>
+                  <div class="footer__contact-content">
+                    <a href="#contact" class="footer__contact-link">
+                      Send Message
+                    </a>
+                    <span class="footer__contact-label">Contact form</span>
+                  </div>
+                </li>
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">⏰</span>
+                  <div class="footer__contact-content">
+                    <span class="footer__contact-link">24-hour response</span>
+                    <span class="footer__contact-label">Our commitment</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h4 class="footer__column-title">Support</h4>
+              <ul class="footer__link-list">
+                <li><a href="#" class="footer__link">Help Center</a></li>
+                <li><a href="#" class="footer__link">Documentation</a></li>
+                <li><a href="#" class="footer__link">API Reference</a></li>
+                <li><a href="#" class="footer__link">Status</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h4 class="footer__column-title">Legal</h4>
+              <ul class="footer__link-list">
+                <li>
+                  <a href="privacy-policy.html" class="footer__link">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="terms-of-service.html" class="footer__link">Terms of Service</a>
+                </li>
+                <li>
+                  <a href="cookie-policy.html" class="footer__link">Cookie Policy</a>
+                </li>
+                <li><a href="gdpr.html" class="footer__link">GDPR</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            © 2024 Rentrovio. All rights reserved.
+          </p>
+          <p class="footer__made-with">
+            Made with ❤️ for property management professionals
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-02JP977M3X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-02JP977M3X");
+  </script>
+</body>
+
 </html>

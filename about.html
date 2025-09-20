@@ -45,6 +45,27 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://rentrovio.com/about" hreflang="en-US" />
+
+  <!-- Content Security Policy for XSS Protection -->
+  <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 
+                 'unsafe-inline';
+      style-src 'self' 
+                'unsafe-inline';
+      img-src 'self' 
+              data:;
+      font-src 'self' 
+               data:;
+      connect-src 'self';
+      frame-src 'none';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests;
+      block-all-mixed-content;
+  ">
+
   <title>About Us - Rentrovio | Our Story & Mission</title>
   <link rel="icon" type="image/png" href="assets/images/app_icon.png" />
   <link rel="apple-touch-icon" href="assets/images/app_icon.png" />
@@ -99,12 +120,7 @@
             <img src="assets/images/logo.png" alt="Rentrovio - Rent Management Platform" class="header__logo-image" />
           </a>
         </div>
-        <nav
-          class="header__navigation"
-          id="navigation"
-          role="navigation"
-          aria-label="Main navigation"
-        >
+        <nav class="header__navigation" id="navigation" role="navigation" aria-label="Main navigation">
           <ul class="header__nav-list">
             <li class="header__nav-item">
               <a href="about.html" class="header__nav-link">About</a>
@@ -121,19 +137,11 @@
           </ul>
         </nav>
         <div class="header__actions">
-          <a
-            href="index.html#beta-signup"
-            class="btn btn--primary header__cta-button"
-          >
+          <a href="index.html#beta-signup" class="btn btn--primary header__cta-button">
             Join Beta Waitlist
           </a>
-          <button
-            class="header__mobile-toggle"
-            id="mobileToggle"
-            aria-controls="navigation"
-            aria-expanded="false"
-            aria-label="Toggle navigation menu"
-          >
+          <button class="header__mobile-toggle" id="mobileToggle" aria-controls="navigation" aria-expanded="false"
+            aria-label="Toggle navigation menu">
             <span class="header__mobile-toggle-icon"></span>
           </button>
         </div>
