@@ -16,11 +16,6 @@ const RentrovioLanding = {
     this.initializeComponents();
     this.setupEventListeners();
     this.setupScrollAnimations();
-    
-    // Prefetch important pages after initial load
-    setTimeout(() => {
-      this.PrefetchComponent.prefetchImportantPages();
-    }, 3000); // Wait 3 seconds after page load
   },
 
   // Initialize all components
@@ -113,7 +108,7 @@ RentrovioLanding.HeaderComponent = {
     this.elements.header = document.getElementById("header");
     this.elements.mobileToggle = document.getElementById("mobileToggle");
     this.elements.navigation = document.getElementById("navigation");
-    
+
     // Debug logging
     console.log("Header component elements:", {
       header: this.elements.header,
@@ -125,7 +120,7 @@ RentrovioLanding.HeaderComponent = {
   bindEvents: function () {
     if (this.elements.mobileToggle && this.elements.navigation) {
       console.log("Binding mobile toggle events");
-      
+
       this.elements.mobileToggle.addEventListener(
         "click",
         this.toggleMobileMenu.bind(this)
@@ -168,7 +163,7 @@ RentrovioLanding.HeaderComponent = {
     // Enhanced outside click detection
     document.addEventListener("click", (e) => {
       if (
-        this.elements.navigation && 
+        this.elements.navigation &&
         this.elements.mobileToggle &&
         this.elements.navigation.classList.contains("active") &&
         !this.elements.navigation.contains(e.target) &&
@@ -349,9 +344,8 @@ RentrovioLanding.BetaSignupComponent = {
 
 Email: ${email}
 Signup Time: ${new Date().toLocaleString()}
-Total Subscribers: ${
-          RentrovioLanding.state.subscribers.length
-        }\n\nThis is an automated notification from the Rentrovio landing page.`,
+Total Subscribers: ${RentrovioLanding.state.subscribers.length
+          }\n\nThis is an automated notification from the Rentrovio landing page.`,
       };
 
       emailjs
@@ -958,8 +952,7 @@ RentrovioLanding.UserRolesComponent = {
       navTabs.innerHTML = roleData.tabs
         .map(
           (tab, index) =>
-            `<span class="nav-tab ${
-              index === 0 ? "nav-tab--active" : ""
+            `<span class="nav-tab ${index === 0 ? "nav-tab--active" : ""
             }">${tab}</span>`
         )
         .join("");
@@ -1035,152 +1028,186 @@ RentrovioLanding.PricingComponent = {
 RentrovioLanding.PrefetchComponent = {
   prefetchedUrls: new Set(),
   prefetchElements: new Map(),
-  
-  init: function() {
+
+  init: function () {
     this.setupHoverPrefetch();
   },
-  
-  setupHoverPrefetch: function() {
+
+  setupHoverPrefetch: function () {
     // Use event delegation for better performance
     document.addEventListener('mouseenter', (e) => {
       if (e.target.tagName === 'A' && e.target.href) {
         this.handleLinkHover(e.target);
       }
     }, true);
-    
+
     document.addEventListener('mouseleave', (e) => {
       if (e.target.tagName === 'A' && e.target.href) {
         this.handleLinkLeave(e.target);
       }
     }, true);
   },
-  
-  handleLinkHover: function(link) {
+
+  handleLinkHover: function (link) {
     const url = link.href;
-    
+
     // Skip if already prefetched or invalid
     if (!this.shouldPrefetch(url)) {
       return;
     }
-    
+
     // Add visual indicator class
     link.classList.add('prefetch-indicator');
-    
+
     // Add small delay to avoid prefetching on quick mouse movements
     const prefetchTimeout = setTimeout(() => {
       link.classList.add('prefetching');
-      this.prefetchUrl(url);
-      
+      this.prefetchUrlCloudflare(url);
+
       // Remove visual indicator after prefetch starts
       setTimeout(() => {
         link.classList.remove('prefetching');
       }, 1000);
     }, 100);
-    
+
     // Store timeout so we can cancel it if mouse leaves quickly
     link._prefetchTimeout = prefetchTimeout;
   },
-  
-  handleLinkLeave: function(link) {
+
+  handleLinkLeave: function (link) {
     // Cancel prefetch if mouse leaves quickly
     if (link._prefetchTimeout) {
       clearTimeout(link._prefetchTimeout);
       delete link._prefetchTimeout;
     }
-    
+
     // Remove visual indicators
     link.classList.remove('prefetch-indicator', 'prefetching');
   },
-  
-  shouldPrefetch: function(url) {
+
+  shouldPrefetch: function (url) {
     try {
       const linkUrl = new URL(url);
       const currentUrl = new URL(window.location.href);
-      
+
       // Skip if already prefetched
       if (this.prefetchedUrls.has(url)) {
         return false;
       }
-      
+
       // Skip external links
       if (linkUrl.hostname !== currentUrl.hostname) {
         return false;
       }
-      
+
       // Skip anchor links on same page
       if (linkUrl.pathname === currentUrl.pathname && linkUrl.hash) {
         return false;
       }
-      
+
       // Skip mailto, tel, and other non-http protocols
       if (!linkUrl.protocol.startsWith('http')) {
         return false;
       }
-      
+
       // Skip current page
       if (linkUrl.href === currentUrl.href) {
         return false;
       }
-      
+
       return true;
     } catch (e) {
       // Invalid URL
       return false;
     }
   },
-  
-  prefetchUrl: function(url) {
+
+  // prefetchUrl: function (url) {
+  //   // Mark as prefetched
+  //   this.prefetchedUrls.add(url);
+
+  //   // First, check if the URL is accessible with a HEAD request
+  //   fetch(url, { method: 'HEAD' })
+  //     .then(response => {
+  //       if (response.ok) {
+  //         // Create prefetch link element only if URL is accessible
+  //         const prefetchLink = document.createElement('link');
+  //         prefetchLink.rel = 'prefetch';
+  //         prefetchLink.href = url;
+  //         prefetchLink.as = 'document';
+
+  //         // Add error handling
+  //         prefetchLink.onerror = () => {
+  //           console.warn('Prefetch failed for:', url);
+  //           this.cleanupPrefetch(url);
+  //         };
+
+  //         prefetchLink.onload = () => {
+  //           console.log('Successfully prefetched:', url);
+  //         };
+
+  //         // Add to head
+  //         document.head.appendChild(prefetchLink);
+
+  //         // Store reference for cleanup
+  //         this.prefetchElements.set(url, prefetchLink);
+
+  //         // Clean up old prefetch elements after some time to avoid memory issues
+  //         setTimeout(() => {
+  //           this.cleanupPrefetch(url);
+  //         }, 30000); // Clean up after 30 seconds
+  //       } else {
+  //         console.warn('Cannot prefetch - URL returned status:', response.status, url);
+  //       }
+  //     })
+  //     .catch(error => {
+  //       console.warn('Prefetch check failed for:', url, error);
+  //     });
+  // },
+
+  // Cloudflare-compatible prefetch method
+  prefetchUrlCloudflare: function (url) {
     // Mark as prefetched
     this.prefetchedUrls.add(url);
-    
-    // Create prefetch link element
+
+    // Skip HEAD request check for Cloudflare - just try to prefetch
     const prefetchLink = document.createElement('link');
     prefetchLink.rel = 'prefetch';
     prefetchLink.href = url;
     prefetchLink.as = 'document';
-    
+
+    // Add Cloudflare-friendly attributes
+    prefetchLink.crossOrigin = 'anonymous';
+
+    // Add error handling
+    prefetchLink.onerror = () => {
+      console.warn('Cloudflare prefetch failed for:', url);
+      this.cleanupPrefetch(url);
+    };
+
+    prefetchLink.onload = () => {
+      console.log('Successfully prefetched via Cloudflare:', url);
+    };
+
     // Add to head
     document.head.appendChild(prefetchLink);
-    
+
     // Store reference for cleanup
     this.prefetchElements.set(url, prefetchLink);
-    
-    // Optional: Log for debugging (remove in production)
-    console.log('Prefetching:', url);
-    
-    // Clean up old prefetch elements after some time to avoid memory issues
+
+    // Clean up after shorter time for Cloudflare
     setTimeout(() => {
       this.cleanupPrefetch(url);
-    }, 30000); // Clean up after 30 seconds
+    }, 60000); // Clean up after 60 seconds
   },
-  
-  cleanupPrefetch: function(url) {
+
+  cleanupPrefetch: function (url) {
     const element = this.prefetchElements.get(url);
     if (element && element.parentNode) {
       element.parentNode.removeChild(element);
       this.prefetchElements.delete(url);
     }
   },
-  
-  // Method to manually prefetch important pages
-  prefetchImportantPages: function() {
-    const importantPages = [
-      '/about.html',
-      '/blog.html',
-      '/contact.html',
-      '/careers.html'
-    ];
-    
-    importantPages.forEach(page => {
-      const fullUrl = new URL(page, window.location.origin).href;
-      if (this.shouldPrefetch(fullUrl)) {
-        // Add small delay between prefetches to avoid overwhelming the browser
-        setTimeout(() => {
-          this.prefetchUrl(fullUrl);
-        }, Math.random() * 2000);
-      }
-    });
-  }
 };
 
 // Utility Functions
@@ -1219,7 +1246,7 @@ RentrovioLanding.Utils = {
       rect.top >= 0 &&
       rect.left >= 0 &&
       rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
+      (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   },
