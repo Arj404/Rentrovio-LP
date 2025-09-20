@@ -1,7 +1,7 @@
 // Blog Pagination Component
 const BlogPagination = {
   currentPage: 1,
-  postsPerPage: 4,
+  postsPerPage: 6,
   totalPosts: 0,
 
   init: function () {
