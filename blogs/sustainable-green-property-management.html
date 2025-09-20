@@ -48,7 +48,6 @@
     default-src 'self';
     script-src 'self' 
                'unsafe-inline'
-               https://cdn.jsdelivr.net/npm/@emailjs/browser@4/
                https://www.googletagmanager.com/
                https://www.google-analytics.com/
                https://static.cloudflareinsights.com/;
@@ -61,7 +60,6 @@
     font-src 'self' 
              data:;
     connect-src 'self' 
-                https://api.emailjs.com/
                 https://www.google-analytics.com/
                 https://www.googletagmanager.com/
                 https://*.cloudflareinsights.com/;
@@ -69,7 +67,6 @@
     object-src 'none';
     base-uri 'self';
     form-action 'self' 
-                https://api.emailjs.com/;
     upgrade-insecure-requests;
     block-all-mixed-content;
 ">

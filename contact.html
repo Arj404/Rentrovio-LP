@@ -50,7 +50,6 @@
     default-src 'self';
     script-src 'self' 
                'unsafe-inline'
-               https://cdn.jsdelivr.net/npm/@emailjs/browser@4/
                https://www.googletagmanager.com/
                https://www.google-analytics.com/
                https://*.cloudflareinsights.com/;
@@ -63,7 +62,7 @@
     font-src 'self' 
              data:;
     connect-src 'self' 
-                https://api.emailjs.com/
+                https://rentrovio-core-417144417802.asia-south2.run.app/
                 https://www.google-analytics.com/
                 https://www.googletagmanager.com/
                 https://*.cloudflareinsights.com/;
@@ -71,7 +70,7 @@
     object-src 'none';
     base-uri 'self';
     form-action 'self' 
-                https://api.emailjs.com/;
+                https://rentrovio-core-417144417802.asia-south2.run.app/;
     upgrade-insecure-requests;
     block-all-mixed-content;
 ">
@@ -242,72 +241,77 @@
             <form class="contact-form" id="contactForm" aria-label="Contact form">
               <div class="form-row">
                 <div class="form-group">
-                  <label for="firstName" class="form-label">First Name *</label>
-                  <input type="text" id="firstName" name="firstName" class="form-input" required />
+                  <label for="contactName" class="form-label">Full Name *</label>
+                  <input type="text" id="contactName" name="name" class="form-input" placeholder="Enter your full name"
+                    required />
                 </div>
+
                 <div class="form-group">
-                  <label for="lastName" class="form-label">Last Name *</label>
-                  <input type="text" id="lastName" name="lastName" class="form-input" required />
+                  <label for="contactEmail" class="form-label">Email Address *</label>
+                  <input type="email" id="contactEmail" name="email" class="form-input"
+                    placeholder="Enter your email address" required />
                 </div>
               </div>
+
               <div class="form-row">
                 <div class="form-group">
-                  <label for="email" class="form-label">Email Address *</label>
-                  <input type="email" id="email" name="email" class="form-input" required />
+                  <label for="contactSubject" class="form-label">Subject *</label>
+                  <select id="contactSubject" name="subject" class="form-select" required>
+                    <option value="">Select a subject</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Beta Access Request">
+                      Beta Access Request
+                    </option>
+                    <option value="Partnership Opportunity">
+                      Partnership Opportunity
+                    </option>
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="Feature Request">Feature Request</option>
+                    <option value="Media Inquiry">Media Inquiry</option>
+                    <option value="Other">Other</option>
+                  </select>
                 </div>
+
                 <div class="form-group">
-                  <label for="phone" class="form-label">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" class="form-input" />
+                  <label class="form-label">I am a:</label>
+                  <div class="radio-group">
+                    <label class="radio-option">
+                      <input type="radio" name="userType" value="landlord" checked />
+                      <span class="radio-custom"></span>
+                      <span class="radio-label">Landlord</span>
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="userType" value="tenant" />
+                      <span class="radio-custom"></span>
+                      <span class="radio-label">Tenant</span>
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="userType" value="caretaker" />
+                      <span class="radio-custom"></span>
+                      <span class="radio-label">Caretaker</span>
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="userType" value="other" />
+                      <span class="radio-custom"></span>
+                      <span class="radio-label">Other</span>
+                    </label>
+                  </div>
                 </div>
               </div>
+
               <div class="form-group">
-                <label for="company" class="form-label">Company/Organization</label>
-                <input type="text" id="company" name="company" class="form-input" />
+                <label for="contactMessage" class="form-label">Message *</label>
+                <textarea id="contactMessage" name="message" class="form-textarea" rows="5"
+                  placeholder="Tell us about your inquiry or how we can help you..." required></textarea>
               </div>
-              <div class="form-group">
-                <label for="inquiryType" class="form-label">Inquiry Type *</label>
-                <select id="inquiryType" name="inquiryType" class="form-select" required>
-                  <option value="">Select an option</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="support">Technical Support</option>
-                  <option value="partnership">Partnership</option>
-                  <option value="demo">Request Demo</option>
-                  <option value="feedback">Feedback</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Are you currently managing rental properties? *</label>
-                <div class="radio-group">
-                  <label class="radio-option">
-                    <input type="radio" name="propertyManager" value="yes" required />
-                    <span class="radio-custom"></span>
-                    <span class="radio-label">Yes</span>
-                  </label>
-                  <label class="radio-option">
-                    <input type="radio" name="propertyManager" value="no" required />
-                    <span class="radio-custom"></span>
-                    <span class="radio-label">No</span>
-                  </label>
-                  <label class="radio-option">
-                    <input type="radio" name="propertyManager" value="planning" required />
-                    <span class="radio-custom"></span>
-                    <span class="radio-label">Planning to</span>
-                  </label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="message" class="form-label">Message *</label>
-                <textarea id="message" name="message" class="form-textarea" rows="5"
-                  placeholder="Tell us how we can help you..." required></textarea>
-              </div>
+
               <div class="form-actions">
-                <button type="submit" class="contact-form__submit btn btn--primary">
+                <button type="submit" class="btn btn--primary contact-form__submit">
                   <span class="submit-text">Send Message</span>
                   <span class="submit-loading" style="display: none">Sending...</span>
                 </button>
                 <p class="form-note">
-                  We'll respond within 24 hours during business days.
+                  * Required fields. We'll respond within 24 hours.
                 </p>
               </div>
             </form>

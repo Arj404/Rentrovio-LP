@@ -300,9 +300,24 @@ RentrovioLanding.BetaSignupComponent = {
     RentrovioLanding.state.isSubmitting = true;
     this.updateSubmitButton("Joining...", true);
 
-    // Simulate API call
-    setTimeout(() => {
-      // Add to subscribers
+    // Call the waitlist API
+    fetch('https://rentrovio-core-417144417802.asia-south2.run.app/v1/helpdesk/waitlist', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email
+      })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Add to subscribers for local tracking
       RentrovioLanding.state.subscribers.push(email);
 
       // Save to localStorage
@@ -311,16 +326,12 @@ RentrovioLanding.BetaSignupComponent = {
         JSON.stringify(RentrovioLanding.state.subscribers)
       );
 
-      // Send admin notification email
-      this.sendAdminNotification(email);
-
       // Update UI
       this.showNotification(
         "🎉 Welcome to the waitlist! We'll notify you when we launch.",
         "success"
       );
       this.elements.emailInput.value = "";
-      RentrovioLanding.updateWaitlistCounter();
 
       // Reset button
       RentrovioLanding.state.isSubmitting = false;
@@ -328,43 +339,23 @@ RentrovioLanding.BetaSignupComponent = {
 
       // Track signup (analytics would go here)
       this.trackSignup(email);
-    }, 1500);
-  },
-
-  sendAdminNotification: function (email) {
-    // Send notification email to admin about new beta signup
-    if (typeof emailjs !== "undefined") {
-      const adminEmailParams = {
-        to_email: "hello@rentrovio.com",
-        subject: "New Beta Waitlist Signup - Rentrovio",
-        subscriber_email: email,
-        signup_time: new Date().toLocaleString(),
-        total_subscribers: RentrovioLanding.state.subscribers.length,
-        message: `A new user has joined the Rentrovio beta waitlist!
-
-Email: ${email}
-Signup Time: ${new Date().toLocaleString()}
-Total Subscribers: ${RentrovioLanding.state.subscribers.length
-          }\n\nThis is an automated notification from the Rentrovio landing page.`,
-      };
-
-      emailjs
-        .send("default_service", "admin_notification", adminEmailParams)
-        .then(
-          (response) => {
-            console.log("Admin notification sent successfully:", response);
-          },
-          (error) => {
-            console.warn("Failed to send admin notification:", error);
-          }
-        );
-    } else {
-      console.log(
-        "EmailJS not available, admin notification simulated for:",
-        email
+    })
+    .catch(error => {
+      console.error('Error submitting to waitlist:', error);
+      
+      // Reset button
+      RentrovioLanding.state.isSubmitting = false;
+      this.updateSubmitButton("Join Waitlist", false);
+      
+      // Show error notification
+      this.showNotification(
+        "Sorry, there was an error joining the waitlist. Please try again.",
+        "error"
       );
-    }
+    });
   },
+
+
 
   isValidEmail: function (email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -451,17 +442,9 @@ RentrovioLanding.ContactFormComponent = {
     submitLoading: null,
   },
 
-  emailConfig: {
-    serviceId: "default_service",
-    templateId: "contact_form",
-    publicKey: "YOUR_EMAILJS_PUBLIC_KEY",
-    toEmail: "hello@rentrovio.com",
-  },
-
   init: function () {
     this.cacheElements();
     this.bindEvents();
-    this.initializeEmailJS();
   },
 
   cacheElements: function () {
@@ -523,19 +506,7 @@ RentrovioLanding.ContactFormComponent = {
     }
   },
 
-  initializeEmailJS: function () {
-    // Initialize EmailJS when the library is loaded
-    if (typeof emailjs !== "undefined") {
-      try {
-        emailjs.init(this.emailConfig.publicKey);
-        console.log("EmailJS initialized successfully");
-      } catch (error) {
-        console.warn("EmailJS initialization failed:", error);
-      }
-    } else {
-      console.warn("EmailJS library not loaded");
-    }
-  },
+
 
   handleSubmit: function (e) {
     e.preventDefault();
@@ -670,41 +641,45 @@ RentrovioLanding.ContactFormComponent = {
     this.setSubmitState(true);
 
     const formData = this.getFormData();
-    const emailParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-      user_type: formData.userType,
-      timestamp: new Date().toISOString(),
-      to_email: this.emailConfig.toEmail,
+    
+    // Map user type to role number (based on your API example)
+    const roleMap = {
+      'landlord': 0,
+      'tenant': 1,
+      'caretaker': 2,
+      'not-specified': 3
     };
 
-    // Try to send email with EmailJS
-    if (typeof emailjs !== "undefined") {
-      emailjs
-        .send(
-          this.emailConfig.serviceId,
-          this.emailConfig.templateId,
-          emailParams
-        )
-        .then(
-          (response) => {
-            console.log("Email sent successfully:", response);
-            this.onEmailSuccess(formData);
-          },
-          (error) => {
-            console.error("Email sending failed:", error);
-            this.onEmailError(error);
-          }
-        );
-    } else {
-      // Fallback: simulate successful email sending for demo
-      console.log("EmailJS not available, simulating email send:", emailParams);
-      setTimeout(() => {
-        this.onEmailSuccess(formData);
-      }, 2000);
-    }
+    const contactData = {
+      email: formData.email,
+      full_name: formData.name,
+      message: formData.message,
+      role: roleMap[formData.userType] || 0,
+      subject: formData.subject
+    };
+
+    // Call the contact API
+    fetch('https://rentrovio-core-417144417802.asia-south2.run.app/v1/helpdesk/contactus', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contactData)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log("Contact form submitted successfully:", data);
+      this.onEmailSuccess(formData);
+    })
+    .catch(error => {
+      console.error("Contact form submission failed:", error);
+      this.onEmailError(error);
+    });
   },
 
   getFormData: function () {
