@@ -1,53 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Rentrovio Blog - Property management insights, tips, and industry news. Stay updated with the latest trends in rental management technology."
+    />
+    <meta
+      name="keywords"
+      content="property management blog, rental management tips, real estate technology news, landlord advice"
+    />
+    <meta name="author" content="Rentrovio" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="language" content="English" />
 
-  <!-- SEO Meta Tags -->
-  <meta name="description"
-    content="Rentrovio Blog - Property management insights, tips, and industry news. Stay updated with the latest trends in rental management technology." />
-  <meta name="keywords"
-    content="property management blog, rental management tips, real estate technology news, landlord advice" />
-  <meta name="author" content="Rentrovio" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <meta name="language" content="English" />
+    <!-- Open Graph Protocol for Social Media -->
+    <meta
+      property="og:title"
+      content="Rentrovio Blog - Property Management Insights"
+    />
+    <meta
+      property="og:description"
+      content="Expert insights, tips, and industry news for property managers, landlords, and real estate professionals."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rentrovio.com/blog" />
+    <meta
+      property="og:image"
+      content="https://rentrovio.com/assets/images/blog-og.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Rentrovio" />
+    <meta property="og:locale" content="en_US" />
 
-  <!-- Open Graph Protocol for Social Media -->
-  <meta property="og:title" content="Rentrovio Blog - Property Management Insights" />
-  <meta property="og:description"
-    content="Expert insights, tips, and industry news for property managers, landlords, and real estate professionals." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rentrovio.com/blog" />
-  <meta property="og:image" content="https://rentrovio.com/assets/images/blog-og.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="Rentrovio" />
-  <meta property="og:locale" content="en_US" />
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Rentrovio Blog - Property Management Insights"
+    />
+    <meta
+      name="twitter:description"
+      content="Expert insights, tips, and industry news for property managers, landlords, and real estate professionals."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rentrovio.com/assets/images/blog-og.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Rentrovio Blog - Property Management Insights"
+    />
 
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rentrovio Blog - Property Management Insights" />
-  <meta name="twitter:description"
-    content="Expert insights, tips, and industry news for property managers, landlords, and real estate professionals." />
-  <meta name="twitter:image" content="https://rentrovio.com/assets/images/blog-og.png" />
-  <meta name="twitter:image:alt" content="Rentrovio Blog - Property Management Insights" />
+    <!-- Additional SEO and Performance Meta Tags -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Rentrovio" />
 
-  <!-- Additional SEO and Performance Meta Tags -->
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="Rentrovio" />
+    <meta name="msvalidate.01" content="4BB6F760866DB7F3FB7F123C4180E3F8" />
 
-  <meta name="msvalidate.01" content="4BB6F760866DB7F3FB7F123C4180E3F8" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rentrovio.com/blog" hreflang="en-US" />
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://rentrovio.com/blog" hreflang="en-US" />
-
-  <!-- Content Security Policy for XSS Protection -->
-  <meta http-equiv="Content-Security-Policy" content="
+    <!-- Content Security Policy for XSS Protection -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
     default-src 'self';
     script-src 'self' 
                'unsafe-inline'
@@ -72,18 +99,22 @@
     form-action 'self' 
     upgrade-insecure-requests;
     block-all-mixed-content;
-">
-  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+"
+    />
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp" />
+    <meta
+      http-equiv="Strict-Transport-Security"
+      content="max-age=31536000; includeSubDomains; preload"
+    />
 
-  <title>Blog - Rentrovio Property Management Insights</title>
-  <link rel="icon" type="image/png" href="assets/images/app_icon.png" />
-  <link rel="apple-touch-icon" href="assets/images/app_icon.png" />
-  <link rel="stylesheet" href="styles.min.css" />
+    <title>Blog - Rentrovio Property Management Insights</title>
+    <link rel="icon" type="image/png" href="assets/images/app_icon.png" />
+    <link rel="apple-touch-icon" href="assets/images/app_icon.png" />
+    <link rel="stylesheet" href="styles.min.css" />
 
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -104,7 +135,7 @@
       }
     </script>
 
-  <script type="application/ld+json">
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -119,7 +150,7 @@
       }
     </script>
 
-  <script type="application/ld+json">
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Blog",
@@ -136,1158 +167,1478 @@
         }
       }
     </script>
-</head>
+  </head>
 
-<body>
-  <!-- Skip Link for Accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="header" id="header" role="banner">
-    <div class="container">
-      <div class="header__content">
-        <div class="header__logo">
-          <a href="index.html">
-            <img src="assets/images/logo.png" alt="Rentrovio - Rent Management Platform" class="header__logo-image" />
-          </a>
-        </div>
-        <nav class="header__navigation" id="navigation" role="navigation" aria-label="Main navigation">
-          <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a href="about.html" class="header__nav-link">About</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="careers.html" class="header__nav-link">Careers</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="blog.html" class="header__nav-link">Blog</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="contact.html" class="header__nav-link">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="header__actions">
-          <a href="index.html#beta-signup" class="btn btn--primary header__cta-button">
-            Join Beta Waitlist
-          </a>
-          <button class="header__mobile-toggle" id="mobileToggle" aria-controls="navigation" aria-expanded="false"
-            aria-label="Toggle navigation menu">
-            <span class="header__mobile-toggle-icon"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-  <main id="main-content">
-    <section class="page-hero">
+  <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header" id="header" role="banner">
       <div class="container">
-        <div class="page-hero__content">
-          <h1 class="page-hero__title">Property Management Insights</h1>
-          <p class="page-hero__description">
-            Expert tips, industry trends, and practical advice for modern
-            property management. Stay ahead with the latest insights from the
-            Rentrovio team.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="blog-content-section">
-      <div class="container">
-
-        <div class="blog-grid">
-          <article class="blog-post" data-page="1">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>📊</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">December 15, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                10 Essential Property Management KPIs Every Landlord Should
-                Track
-              </h3>
-              <p class="blog-post__excerpt">
-                Discover the key performance indicators that successful
-                property managers use to optimize their operations and
-                maximize returns.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/essential-property-management-kpis.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-          <article class="blog-post" data-page="1">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🤖</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Technology</span>
-                <span class="blog-post__date">December 10, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                How AI is Revolutionizing Property Management
-              </h3>
-              <p class="blog-post__excerpt">
-                Explore how artificial intelligence and automation are
-                transforming the way property managers handle maintenance,
-                tenant screening, and operations.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/ai-revolutionizing-property-management.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-          <article class="blog-post" data-page="1">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>📈</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Industry News</span>
-                <span class="blog-post__date">December 5, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                2025 Rental Market Trends: What Property Managers Need to Know
-              </h3>
-              <p class="blog-post__excerpt">
-                Stay ahead of the curve with our analysis of emerging trends
-                in the rental market and their implications for property
-                management.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/2025-rental-market-trends.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-          <article class="blog-post" data-category="tips" data-page="1">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🔧</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">November 28, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Streamlining Maintenance Requests: A Complete Guide
-              </h3>
-              <p class="blog-post__excerpt">
-                Learn how to efficiently manage maintenance requests, reduce
-                response times, and keep tenants satisfied with proven
-                strategies.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/streamlining-maintenance-requests.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-          <article class="blog-post" data-category="case-studies" data-page="2" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>📋</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Case Studies</span>
-                <span class="blog-post__date">November 20, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Case Study: How One Landlord Increased Efficiency by 40%
-              </h3>
-              <p class="blog-post__excerpt">
-                Real-world success story of a property manager who transformed
-                their operations using modern property management tools and
-                strategies.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/landlord-efficiency-case-study.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-          <article class="blog-post" data-category="technology" data-page="2" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🔒</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Technology</span>
-                <span class="blog-post__date">November 15, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Data Security in Property Management: Best Practices
-              </h3>
-              <p class="blog-post__excerpt">
-                Essential security measures every property manager should
-                implement to protect sensitive tenant and financial data.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/data-security-best-practices.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <!-- Page 2 blogs (hidden initially) -->
-          <article class="blog-post" data-category="tips" data-page="2" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>💰</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">November 10, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Maximizing Rental Income: Proven Strategies for Landlords
-              </h3>
-              <p class="blog-post__excerpt">
-                Discover effective methods to increase your rental income without compromising tenant satisfaction or
-                property value.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/maximizing-rental-income.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="industry" data-page="2" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🏘️</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Industry News</span>
-                <span class="blog-post__date">November 5, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                The Rise of Smart Buildings: Impact on Property Management
-              </h3>
-              <p class="blog-post__excerpt">
-                How IoT devices and smart building technology are changing the landscape of property management and
-                tenant expectations.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/smart-buildings-impact.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="case-studies" data-page="2" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🎯</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Case Studies</span>
-                <span class="blog-post__date">October 30, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                From Chaos to Control: A Property Manager's Digital Transformation
-              </h3>
-              <p class="blog-post__excerpt">
-                Follow the journey of a traditional property manager who embraced digital tools to streamline operations
-                and improve tenant satisfaction.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/digital-transformation-case-study.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="technology" data-page="2" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>📱</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Technology</span>
-                <span class="blog-post__date">October 25, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Mobile-First Property Management: Why It Matters
-              </h3>
-              <p class="blog-post__excerpt">
-                Understanding the importance of mobile accessibility in property management and how it benefits both
-                managers and tenants.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/mobile-first-property-management.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <!-- Page 3 blogs (hidden initially) -->
-          <article class="blog-post" data-category="tips" data-page="3" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🤝</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">October 20, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Building Strong Tenant Relationships: A Landlord's Guide
-              </h3>
-              <p class="blog-post__excerpt">
-                Learn how to foster positive relationships with tenants that lead to longer tenancies and fewer
-                headaches.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/building-tenant-relationships.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="industry" data-page="3" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>⚖️</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Industry News</span>
-                <span class="blog-post__date">October 15, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                New Rental Laws 2025: What Property Managers Need to Know
-              </h3>
-              <p class="blog-post__excerpt">
-                Stay compliant with the latest rental regulations and understand how new laws affect your property
-                management practices.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/new-rental-laws-2025.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="tips" data-page="3" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🔍</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">October 10, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Tenant Screening and Selection: A Complete Process Guide
-              </h3>
-              <p class="blog-post__excerpt">
-                Master the art of tenant screening with our comprehensive guide to finding reliable, long-term tenants.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/tenant-screening-selection-process.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="tips" data-page="3" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>💰</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">October 5, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Rent Collection Optimization: Strategies for Success
-              </h3>
-              <p class="blog-post__excerpt">
-                Improve your rent collection rates and reduce late payments with proven strategies and modern tools.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/rent-collection-optimization-strategies.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <!-- Page 4 blogs (hidden initially) -->
-          <article class="blog-post" data-category="tips" data-page="4" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>📋</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">September 30, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Property Maintenance Scheduling and Management
-              </h3>
-              <p class="blog-post__excerpt">
-                Learn how to create efficient maintenance schedules that prevent costly repairs and keep tenants happy.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/property-maintenance-scheduling-management.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="tips" data-page="4" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>💵</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">September 25, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Property Valuation and Rent Pricing Strategies
-              </h3>
-              <p class="blog-post__excerpt">
-                Master the art of pricing your rental properties competitively while maximizing your return on
-                investment.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/property-valuation-rent-pricing-strategies.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="tips" data-page="4" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>📢</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">September 20, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Property Marketing and Advertising Strategies
-              </h3>
-              <p class="blog-post__excerpt">
-                Effective marketing techniques to attract quality tenants and reduce vacancy periods for your
-                properties.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/property-marketing-advertising-strategies.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="legal" data-page="4" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>📄</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Legal & Compliance</span>
-                <span class="blog-post__date">September 15, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Lease Agreement Essentials and Legal Compliance
-              </h3>
-              <p class="blog-post__excerpt">
-                Everything you need to know about creating legally compliant lease agreements that protect your
-                interests.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/lease-agreement-essentials-legal-compliance.html" class="blog-post__read-more">Read
-                More</a>
-            </div>
-          </article>
-
-          <!-- Page 5 blogs (hidden initially) -->
-          <article class="blog-post" data-category="technology" data-page="5" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🔒</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Technology</span>
-                <span class="blog-post__date">September 10, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Cybersecurity for Property Managers: Essential Protection
-              </h3>
-              <p class="blog-post__excerpt">
-                Protect your property management business from cyber threats with comprehensive security strategies.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/cybersecurity-for-property-managers.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="technology" data-page="5" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🏠</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Technology</span>
-                <span class="blog-post__date">September 5, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                IoT and Smart Home Technology Integration
-              </h3>
-              <p class="blog-post__excerpt">
-                Discover how Internet of Things devices are transforming rental properties and tenant experiences.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/iot-smart-home-technology-integration.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="technology" data-page="5" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🖥️</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Technology</span>
-                <span class="blog-post__date">August 30, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Property Management Software Comparison Guide
-              </h3>
-              <p class="blog-post__excerpt">
-                Compare the top property management software solutions to find the best fit for your business needs.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/property-management-software-comparison.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="technology" data-page="5" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🎥</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Technology</span>
-                <span class="blog-post__date">August 25, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Virtual Property Tours and Digital Marketing
-              </h3>
-              <p class="blog-post__excerpt">
-                Leverage virtual tours and digital marketing to attract tenants and showcase properties effectively.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/virtual-property-tours-digital-marketing.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <!-- Page 6 blogs (hidden initially) -->
-          <article class="blog-post" data-category="industry" data-page="6" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🌱</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Industry News</span>
-                <span class="blog-post__date">August 20, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Sustainable and Green Property Management Practices
-              </h3>
-              <p class="blog-post__excerpt">
-                Implement eco-friendly practices that reduce costs, attract environmentally conscious tenants, and boost
-                property value.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/sustainable-green-property-management.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="industry" data-page="6" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🏠</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Industry News</span>
-                <span class="blog-post__date">August 15, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Remote Work Impact on Rental Markets
-              </h3>
-              <p class="blog-post__excerpt">
-                Understand how the remote work revolution is reshaping rental demand and property management strategies.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/remote-work-impact-rental-markets.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="industry" data-page="6" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>👥</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Industry News</span>
-                <span class="blog-post__date">August 10, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Generational Differences in Rental Preferences
-              </h3>
-              <p class="blog-post__excerpt">
-                Learn how different generations approach renting and adapt your property management strategies
-                accordingly.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/generational-differences-rental-preferences.html" class="blog-post__read-more">Read
-                More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="industry" data-page="6" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🏘️</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Industry News</span>
-                <span class="blog-post__date">August 5, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Affordable Housing Initiatives and Regulations
-              </h3>
-              <p class="blog-post__excerpt">
-                Navigate the complex landscape of affordable housing programs and understand their impact on property
-                management.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/affordable-housing-initiatives-regulations.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <!-- Page 7 blogs (hidden initially) -->
-          <article class="blog-post" data-category="case-studies" data-page="7" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🏢</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Case Studies</span>
-                <span class="blog-post__date">July 30, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Multi-Family Property Turnaround: A Success Story
-              </h3>
-              <p class="blog-post__excerpt">
-                How strategic property management transformed a struggling multi-family complex into a profitable
-                investment.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/multi-family-property-turnaround-case-study.html" class="blog-post__read-more">Read
-                More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="case-studies" data-page="7" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🎯</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Case Studies</span>
-                <span class="blog-post__date">July 25, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Tenant Retention Success Story: 95% Renewal Rate
-              </h3>
-              <p class="blog-post__excerpt">
-                Learn the strategies that helped one property manager achieve an exceptional 95% tenant renewal rate.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/tenant-retention-success-story-case-study.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="tips" data-page="7" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🛡️</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">July 20, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Landlord Insurance and Risk Management Strategies
-              </h3>
-              <p class="blog-post__excerpt">
-                Protect your investment with comprehensive insurance coverage and effective risk management practices.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/landlord-insurance-risk-management.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-post" data-category="tips" data-page="7" style="display: none;">
-            <div class="blog-post__image">
-              <div class="blog-post__image-placeholder">
-                <span>🚨</span>
-              </div>
-            </div>
-            <div class="blog-post__content">
-              <div class="blog-post__meta">
-                <span class="blog-post__category">Tips & Guides</span>
-                <span class="blog-post__date">July 15, 2024</span>
-              </div>
-              <h3 class="blog-post__title">
-                Emergency Response and Crisis Management for Property Managers
-              </h3>
-              <p class="blog-post__excerpt">
-                Develop effective emergency response plans to handle crises and protect both tenants and property
-                investments.
-              </p>
-              <div class="blog-post__author">
-                <div class="blog-post__author-avatar">
-                  <span>AJ</span>
-                </div>
-                <div class="blog-post__author-info">
-                  <span class="blog-post__author-name">Arjav Jain</span>
-                  <span class="blog-post__author-role">CEO</span>
-                </div>
-              </div>
-              <a href="blogs/emergency-response-crisis-management.html" class="blog-post__read-more">Read More</a>
-            </div>
-          </article>
-        </div>
-        <div class="blog-pagination">
-          <button class="pagination-btn pagination-btn--prev" disabled>
-            ← Previous
-          </button>
-          <div class="pagination-numbers">
-            <button class="pagination-number pagination-number--active">
-              1
+        <div class="header__content">
+          <div class="header__logo">
+            <a href="index.html">
+              <img
+                src="assets/images/logo.png"
+                alt="Rentrovio - Rent Management Platform"
+                class="header__logo-image"
+              />
+            </a>
+          </div>
+          <nav
+            class="header__navigation"
+            id="navigation"
+            role="navigation"
+            aria-label="Main navigation"
+          >
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a href="about.html" class="header__nav-link">About</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="careers.html" class="header__nav-link">Careers</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="blog.html" class="header__nav-link">Blog</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="contact.html" class="header__nav-link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__actions">
+            <a
+              href="index.html#beta-signup"
+              class="btn btn--primary header__cta-button"
+            >
+              Join Beta Waitlist
+            </a>
+            <button
+              class="header__mobile-toggle"
+              id="mobileToggle"
+              aria-controls="navigation"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu"
+            >
+              <span class="header__mobile-toggle-icon"></span>
             </button>
-            <button class="pagination-number">2</button>
-            <button class="pagination-number">3</button>
-            <button class="pagination-number">4</button>
-            <button class="pagination-number">5</button>
-            <button class="pagination-number">6</button>
-            <button class="pagination-number">7</button>
           </div>
-          <button class="pagination-btn pagination-btn--next">Next →</button>
         </div>
       </div>
-    </section>
-    <section class="newsletter-section">
-      <div class="container">
-        <div class="newsletter-content">
-          <h2 class="newsletter-title">Stay Updated</h2>
-          <p class="newsletter-description">
-            Get the latest property management insights delivered to your
-            inbox weekly.
-          </p>
-          <form class="newsletter-form">
-            <div class="newsletter-form__input-group">
-              <input type="email" class="newsletter-form__input" placeholder="Enter your email address" required />
-              <button type="submit" class="btn btn--primary newsletter-form__button">
-                Subscribe
+    </header>
+    <main id="main-content">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero__content">
+            <h1 class="page-hero__title">Property Management Insights</h1>
+            <p class="page-hero__description">
+              Expert tips, industry trends, and practical advice for modern
+              property management. Stay ahead with the latest insights from the
+              Rentrovio team.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="blog-content-section">
+        <div class="container">
+          <div class="blog-grid">
+            <article class="blog-post" data-page="1">
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>📊</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">December 15, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  10 Essential Property Management KPIs Every Landlord Should
+                  Track
+                </h3>
+                <p class="blog-post__excerpt">
+                  Discover the key performance indicators that successful
+                  property managers use to optimize their operations and
+                  maximize returns.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/essential-property-management-kpis.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+            <article class="blog-post" data-page="1">
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🤖</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Technology</span>
+                  <span class="blog-post__date">December 10, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  How AI is Revolutionizing Property Management
+                </h3>
+                <p class="blog-post__excerpt">
+                  Explore how artificial intelligence and automation are
+                  transforming the way property managers handle maintenance,
+                  tenant screening, and operations.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/ai-revolutionizing-property-management.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+            <article class="blog-post" data-page="1">
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>📈</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Industry News</span>
+                  <span class="blog-post__date">December 5, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  2025 Rental Market Trends: What Property Managers Need to Know
+                </h3>
+                <p class="blog-post__excerpt">
+                  Stay ahead of the curve with our analysis of emerging trends
+                  in the rental market and their implications for property
+                  management.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/2025-rental-market-trends.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+            <article class="blog-post" data-category="tips" data-page="1">
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🔧</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">November 28, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Streamlining Maintenance Requests: A Complete Guide
+                </h3>
+                <p class="blog-post__excerpt">
+                  Learn how to efficiently manage maintenance requests, reduce
+                  response times, and keep tenants satisfied with proven
+                  strategies.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/streamlining-maintenance-requests.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+            <article
+              class="blog-post"
+              data-category="case-studies"
+              data-page="2"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>📋</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Case Studies</span>
+                  <span class="blog-post__date">November 20, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Case Study: How One Landlord Increased Efficiency by 40%
+                </h3>
+                <p class="blog-post__excerpt">
+                  Real-world success story of a property manager who transformed
+                  their operations using modern property management tools and
+                  strategies.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/landlord-efficiency-case-study.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+            <article
+              class="blog-post"
+              data-category="technology"
+              data-page="2"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🔒</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Technology</span>
+                  <span class="blog-post__date">November 15, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Data Security in Property Management: Best Practices
+                </h3>
+                <p class="blog-post__excerpt">
+                  Essential security measures every property manager should
+                  implement to protect sensitive tenant and financial data.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/data-security-best-practices.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <!-- Page 2 blogs (hidden initially) -->
+            <article
+              class="blog-post"
+              data-category="tips"
+              data-page="2"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>💰</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">November 10, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Maximizing Rental Income: Proven Strategies for Landlords
+                </h3>
+                <p class="blog-post__excerpt">
+                  Discover effective methods to increase your rental income
+                  without compromising tenant satisfaction or property value.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/maximizing-rental-income.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="industry"
+              data-page="2"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🏘️</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Industry News</span>
+                  <span class="blog-post__date">November 5, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  The Rise of Smart Buildings: Impact on Property Management
+                </h3>
+                <p class="blog-post__excerpt">
+                  How IoT devices and smart building technology are changing the
+                  landscape of property management and tenant expectations.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/smart-buildings-impact.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="case-studies"
+              data-page="2"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🎯</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Case Studies</span>
+                  <span class="blog-post__date">October 30, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  From Chaos to Control: A Property Manager's Digital
+                  Transformation
+                </h3>
+                <p class="blog-post__excerpt">
+                  Follow the journey of a traditional property manager who
+                  embraced digital tools to streamline operations and improve
+                  tenant satisfaction.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/digital-transformation-case-study.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="technology"
+              data-page="2"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>📱</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Technology</span>
+                  <span class="blog-post__date">October 25, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Mobile-First Property Management: Why It Matters
+                </h3>
+                <p class="blog-post__excerpt">
+                  Understanding the importance of mobile accessibility in
+                  property management and how it benefits both managers and
+                  tenants.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/mobile-first-property-management.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <!-- Page 3 blogs (hidden initially) -->
+            <article
+              class="blog-post"
+              data-category="tips"
+              data-page="3"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🤝</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">October 20, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Building Strong Tenant Relationships: A Landlord's Guide
+                </h3>
+                <p class="blog-post__excerpt">
+                  Learn how to foster positive relationships with tenants that
+                  lead to longer tenancies and fewer headaches.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/building-tenant-relationships.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="industry"
+              data-page="3"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>⚖️</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Industry News</span>
+                  <span class="blog-post__date">October 15, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  New Rental Laws 2025: What Property Managers Need to Know
+                </h3>
+                <p class="blog-post__excerpt">
+                  Stay compliant with the latest rental regulations and
+                  understand how new laws affect your property management
+                  practices.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/new-rental-laws-2025.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="tips"
+              data-page="3"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🔍</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">October 10, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Tenant Screening and Selection: A Complete Process Guide
+                </h3>
+                <p class="blog-post__excerpt">
+                  Master the art of tenant screening with our comprehensive
+                  guide to finding reliable, long-term tenants.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/tenant-screening-selection-process.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="tips"
+              data-page="3"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>💰</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">October 5, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Rent Collection Optimization: Strategies for Success
+                </h3>
+                <p class="blog-post__excerpt">
+                  Improve your rent collection rates and reduce late payments
+                  with proven strategies and modern tools.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/rent-collection-optimization-strategies.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <!-- Page 4 blogs (hidden initially) -->
+            <article
+              class="blog-post"
+              data-category="tips"
+              data-page="4"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>📋</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">September 30, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Property Maintenance Scheduling and Management
+                </h3>
+                <p class="blog-post__excerpt">
+                  Learn how to create efficient maintenance schedules that
+                  prevent costly repairs and keep tenants happy.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/property-maintenance-scheduling-management.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="tips"
+              data-page="4"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>💵</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">September 25, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Property Valuation and Rent Pricing Strategies
+                </h3>
+                <p class="blog-post__excerpt">
+                  Master the art of pricing your rental properties competitively
+                  while maximizing your return on investment.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/property-valuation-rent-pricing-strategies.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="tips"
+              data-page="4"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>📢</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">September 20, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Property Marketing and Advertising Strategies
+                </h3>
+                <p class="blog-post__excerpt">
+                  Effective marketing techniques to attract quality tenants and
+                  reduce vacancy periods for your properties.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/property-marketing-advertising-strategies.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="legal"
+              data-page="4"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>📄</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Legal & Compliance</span>
+                  <span class="blog-post__date">September 15, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Lease Agreement Essentials and Legal Compliance
+                </h3>
+                <p class="blog-post__excerpt">
+                  Everything you need to know about creating legally compliant
+                  lease agreements that protect your interests.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/lease-agreement-essentials-legal-compliance.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <!-- Page 5 blogs (hidden initially) -->
+            <article
+              class="blog-post"
+              data-category="technology"
+              data-page="5"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🔒</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Technology</span>
+                  <span class="blog-post__date">September 10, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Cybersecurity for Property Managers: Essential Protection
+                </h3>
+                <p class="blog-post__excerpt">
+                  Protect your property management business from cyber threats
+                  with comprehensive security strategies.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/cybersecurity-for-property-managers.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="technology"
+              data-page="5"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🏠</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Technology</span>
+                  <span class="blog-post__date">September 5, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  IoT and Smart Home Technology Integration
+                </h3>
+                <p class="blog-post__excerpt">
+                  Discover how Internet of Things devices are transforming
+                  rental properties and tenant experiences.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/iot-smart-home-technology-integration.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="technology"
+              data-page="5"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🖥️</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Technology</span>
+                  <span class="blog-post__date">August 30, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Property Management Software Comparison Guide
+                </h3>
+                <p class="blog-post__excerpt">
+                  Compare the top property management software solutions to find
+                  the best fit for your business needs.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/property-management-software-comparison.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="technology"
+              data-page="5"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🎥</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Technology</span>
+                  <span class="blog-post__date">August 25, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Virtual Property Tours and Digital Marketing
+                </h3>
+                <p class="blog-post__excerpt">
+                  Leverage virtual tours and digital marketing to attract
+                  tenants and showcase properties effectively.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/virtual-property-tours-digital-marketing.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <!-- Page 6 blogs (hidden initially) -->
+            <article
+              class="blog-post"
+              data-category="industry"
+              data-page="6"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🌱</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Industry News</span>
+                  <span class="blog-post__date">August 20, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Sustainable and Green Property Management Practices
+                </h3>
+                <p class="blog-post__excerpt">
+                  Implement eco-friendly practices that reduce costs, attract
+                  environmentally conscious tenants, and boost property value.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/sustainable-green-property-management.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="industry"
+              data-page="6"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🏠</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Industry News</span>
+                  <span class="blog-post__date">August 15, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Remote Work Impact on Rental Markets
+                </h3>
+                <p class="blog-post__excerpt">
+                  Understand how the remote work revolution is reshaping rental
+                  demand and property management strategies.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/remote-work-impact-rental-markets.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="industry"
+              data-page="6"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>👥</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Industry News</span>
+                  <span class="blog-post__date">August 10, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Generational Differences in Rental Preferences
+                </h3>
+                <p class="blog-post__excerpt">
+                  Learn how different generations approach renting and adapt
+                  your property management strategies accordingly.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/generational-differences-rental-preferences.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="industry"
+              data-page="6"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🏘️</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Industry News</span>
+                  <span class="blog-post__date">August 5, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Affordable Housing Initiatives and Regulations
+                </h3>
+                <p class="blog-post__excerpt">
+                  Navigate the complex landscape of affordable housing programs
+                  and understand their impact on property management.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/affordable-housing-initiatives-regulations.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <!-- Page 7 blogs (hidden initially) -->
+            <article
+              class="blog-post"
+              data-category="case-studies"
+              data-page="7"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🏢</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Case Studies</span>
+                  <span class="blog-post__date">July 30, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Multi-Family Property Turnaround: A Success Story
+                </h3>
+                <p class="blog-post__excerpt">
+                  How strategic property management transformed a struggling
+                  multi-family complex into a profitable investment.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/multi-family-property-turnaround-case-study.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="case-studies"
+              data-page="7"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🎯</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Case Studies</span>
+                  <span class="blog-post__date">July 25, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Tenant Retention Success Story: 95% Renewal Rate
+                </h3>
+                <p class="blog-post__excerpt">
+                  Learn the strategies that helped one property manager achieve
+                  an exceptional 95% tenant renewal rate.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/tenant-retention-success-story-case-study.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="tips"
+              data-page="7"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🛡️</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">July 20, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Landlord Insurance and Risk Management Strategies
+                </h3>
+                <p class="blog-post__excerpt">
+                  Protect your investment with comprehensive insurance coverage
+                  and effective risk management practices.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/landlord-insurance-risk-management.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="blog-post"
+              data-category="tips"
+              data-page="7"
+              style="display: none"
+            >
+              <div class="blog-post__image">
+                <div class="blog-post__image-placeholder">
+                  <span>🚨</span>
+                </div>
+              </div>
+              <div class="blog-post__content">
+                <div class="blog-post__meta">
+                  <span class="blog-post__category">Tips & Guides</span>
+                  <span class="blog-post__date">July 15, 2024</span>
+                </div>
+                <h3 class="blog-post__title">
+                  Emergency Response and Crisis Management for Property Managers
+                </h3>
+                <p class="blog-post__excerpt">
+                  Develop effective emergency response plans to handle crises
+                  and protect both tenants and property investments.
+                </p>
+                <div class="blog-post__author">
+                  <div class="blog-post__author-avatar">
+                    <span>AJ</span>
+                  </div>
+                  <div class="blog-post__author-info">
+                    <span class="blog-post__author-name">Arjav Jain</span>
+                    <span class="blog-post__author-role">CEO</span>
+                  </div>
+                </div>
+                <a
+                  href="blogs/emergency-response-crisis-management.html"
+                  class="blog-post__read-more"
+                  >Read More</a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="blog-pagination">
+            <button class="pagination-btn pagination-btn--prev" disabled>
+              ← Previous
+            </button>
+            <div class="pagination-numbers">
+              <button class="pagination-number pagination-number--active">
+                1
               </button>
+              <button class="pagination-number">2</button>
+              <button class="pagination-number">3</button>
+              <button class="pagination-number">4</button>
+              <button class="pagination-number">5</button>
+              <button class="pagination-number">6</button>
+              <button class="pagination-number">7</button>
             </div>
-            <p class="newsletter-form__note">
-              No spam, unsubscribe at any time.
-            </p>
-          </form>
+            <button class="pagination-btn pagination-btn--next">Next →</button>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer" id="about">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__main">
-          <div class="footer__brand">
-            <img src="assets/images/logo.png" alt="Rentrovio" class="footer__logo" />
-            <p class="footer__description">
-              Comprehensive rent management platform designed for landlords,
-              tenants, and caretakers.
+      </section>
+      <section class="newsletter-section">
+        <div class="container">
+          <div class="newsletter-content">
+            <h2 class="newsletter-title">Stay Updated</h2>
+            <p class="newsletter-description">
+              Get the latest property management insights delivered to your
+              inbox weekly.
             </p>
-            <div class="footer__social">
-              <a href="https://x.com/rentrovio" class="footer__social-link" aria-label="Twitter">
-                <span>𝕏</span>
-              </a>
-              <a href="https://www.linkedin.com/company/rentrovio/" class="footer__social-link" aria-label="LinkedIn">
-                <span>in</span>
-              </a>
-              <a href="#" class="footer__social-link" aria-label="Facebook">
-                <span>f</span>
-              </a>
+            <form class="newsletter-form">
+              <div class="newsletter-form__input-group">
+                <input
+                  type="email"
+                  class="newsletter-form__input"
+                  placeholder="Enter your email address"
+                  required
+                />
+                <button
+                  type="submit"
+                  class="btn btn--primary newsletter-form__button"
+                >
+                  Subscribe
+                </button>
+              </div>
+              <p class="newsletter-form__note">
+                No spam, unsubscribe at any time.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="about">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__main">
+            <div class="footer__brand">
+              <img
+                src="assets/images/logo.png"
+                alt="Rentrovio"
+                class="footer__logo"
+              />
+              <p class="footer__description">
+                Comprehensive rent management platform designed for landlords,
+                tenants, and caretakers.
+              </p>
+              <div class="footer__social">
+                <a
+                  href="https://x.com/rentrovio"
+                  class="footer__social-link"
+                  aria-label="Twitter"
+                >
+                  <span>𝕏</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/rentrovio/"
+                  class="footer__social-link"
+                  aria-label="LinkedIn"
+                >
+                  <span>in</span>
+                </a>
+                <a href="#" class="footer__social-link" aria-label="Facebook">
+                  <span>f</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="footer__links">
+              <div class="footer__column">
+                <h4 class="footer__column-title">Product</h4>
+                <ul class="footer__link-list">
+                  <li><a href="#features" class="footer__link">Features</a></li>
+                  <li>
+                    <a href="#user-roles" class="footer__link">User Roles</a>
+                  </li>
+                  <li><a href="#pricing" class="footer__link">Pricing</a></li>
+                  <li><a href="#" class="footer__link">Security</a></li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h4 class="footer__column-title">Company</h4>
+                <ul class="footer__link-list">
+                  <li><a href="about.html" class="footer__link">About</a></li>
+                  <li>
+                    <a href="careers.html" class="footer__link">Careers</a>
+                  </li>
+                  <li><a href="blog.html" class="footer__link">Blog</a></li>
+                  <li>
+                    <a href="contact.html" class="footer__link">Contact</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h4 class="footer__column-title">Contact</h4>
+                <ul class="footer__contact-list">
+                  <li class="footer__contact-item">
+                    <span class="footer__contact-icon">📧</span>
+                    <div class="footer__contact-content">
+                      <a
+                        href="mailto:hello@rentrovio.com"
+                        class="footer__contact-link"
+                      >
+                        hello@rentrovio.com
+                      </a>
+                      <span class="footer__contact-label"
+                        >General inquiries</span
+                      >
+                    </div>
+                  </li>
+                  <li class="footer__contact-item">
+                    <span class="footer__contact-icon">💬</span>
+                    <div class="footer__contact-content">
+                      <a href="#contact" class="footer__contact-link">
+                        Send Message
+                      </a>
+                      <span class="footer__contact-label">Contact form</span>
+                    </div>
+                  </li>
+                  <li class="footer__contact-item">
+                    <span class="footer__contact-icon">⏰</span>
+                    <div class="footer__contact-content">
+                      <span class="footer__contact-link">24-hour response</span>
+                      <span class="footer__contact-label">Our commitment</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h4 class="footer__column-title">Support</h4>
+                <ul class="footer__link-list">
+                  <li><a href="#" class="footer__link">Help Center</a></li>
+                  <li><a href="#" class="footer__link">Documentation</a></li>
+                  <li><a href="#" class="footer__link">API Reference</a></li>
+                  <li><a href="#" class="footer__link">Status</a></li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h4 class="footer__column-title">Legal</h4>
+                <ul class="footer__link-list">
+                  <li>
+                    <a href="privacy-policy.html" class="footer__link"
+                      >Privacy Policy</a
+                    >
+                  </li>
+                  <li>
+                    <a href="terms-of-service.html" class="footer__link"
+                      >Terms of Service</a
+                    >
+                  </li>
+                  <li>
+                    <a href="cookie-policy.html" class="footer__link"
+                      >Cookie Policy</a
+                    >
+                  </li>
+                  <li><a href="gdpr.html" class="footer__link">GDPR</a></li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="footer__links">
-            <div class="footer__column">
-              <h4 class="footer__column-title">Product</h4>
-              <ul class="footer__link-list">
-                <li><a href="#features" class="footer__link">Features</a></li>
-                <li>
-                  <a href="#user-roles" class="footer__link">User Roles</a>
-                </li>
-                <li><a href="#pricing" class="footer__link">Pricing</a></li>
-                <li><a href="#" class="footer__link">Security</a></li>
-              </ul>
-            </div>
-
-            <div class="footer__column">
-              <h4 class="footer__column-title">Company</h4>
-              <ul class="footer__link-list">
-                <li><a href="about.html" class="footer__link">About</a></li>
-                <li>
-                  <a href="careers.html" class="footer__link">Careers</a>
-                </li>
-                <li><a href="blog.html" class="footer__link">Blog</a></li>
-                <li>
-                  <a href="contact.html" class="footer__link">Contact</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="footer__column">
-              <h4 class="footer__column-title">Contact</h4>
-              <ul class="footer__contact-list">
-                <li class="footer__contact-item">
-                  <span class="footer__contact-icon">📧</span>
-                  <div class="footer__contact-content">
-                    <a href="mailto:hello@rentrovio.com" class="footer__contact-link">
-                      hello@rentrovio.com
-                    </a>
-                    <span class="footer__contact-label">General inquiries</span>
-                  </div>
-                </li>
-                <li class="footer__contact-item">
-                  <span class="footer__contact-icon">💬</span>
-                  <div class="footer__contact-content">
-                    <a href="#contact" class="footer__contact-link">
-                      Send Message
-                    </a>
-                    <span class="footer__contact-label">Contact form</span>
-                  </div>
-                </li>
-                <li class="footer__contact-item">
-                  <span class="footer__contact-icon">⏰</span>
-                  <div class="footer__contact-content">
-                    <span class="footer__contact-link">24-hour response</span>
-                    <span class="footer__contact-label">Our commitment</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <div class="footer__column">
-              <h4 class="footer__column-title">Support</h4>
-              <ul class="footer__link-list">
-                <li><a href="#" class="footer__link">Help Center</a></li>
-                <li><a href="#" class="footer__link">Documentation</a></li>
-                <li><a href="#" class="footer__link">API Reference</a></li>
-                <li><a href="#" class="footer__link">Status</a></li>
-              </ul>
-            </div>
-
-            <div class="footer__column">
-              <h4 class="footer__column-title">Legal</h4>
-              <ul class="footer__link-list">
-                <li>
-                  <a href="privacy-policy.html" class="footer__link">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="terms-of-service.html" class="footer__link">Terms of Service</a>
-                </li>
-                <li>
-                  <a href="cookie-policy.html" class="footer__link">Cookie Policy</a>
-                </li>
-                <li><a href="gdpr.html" class="footer__link">GDPR</a></li>
-              </ul>
-            </div>
+          <div class="footer__bottom">
+            <p class="footer__copyright">
+              © 2024 Rentrovio. All rights reserved.
+            </p>
+            <p class="footer__made-with">
+              Made with ❤️ for property management professionals
+            </p>
           </div>
         </div>
-
-        <div class="footer__bottom">
-          <p class="footer__copyright">
-            © 2024 Rentrovio. All rights reserved.
-          </p>
-          <p class="footer__made-with">
-            Made with ❤️ for property management professionals
-          </p>
-        </div>
       </div>
-    </div>
-  </footer>
-  <script src="script.min.js"></script>
-  <script src="blog-pagination.min.js"></script>
-</body>
+    </footer>
+    <script src="script.min.js"></script>
+    <script src="blog-pagination.min.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-02JP977M3X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
+      gtag("config", "G-02JP977M3X");
+    </script>
+  </body>
 </html>
