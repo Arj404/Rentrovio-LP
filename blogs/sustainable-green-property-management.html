@@ -86,14 +86,16 @@
             https://www.googletagmanager.com/;
     font-src 'self' 
              data:;
-    connect-src 'self' 
+    connect-src 'self'
+                https://rentrovio-core-417144417802.asia-south2.run.app/ 
                 https://www.google-analytics.com/
                 https://www.googletagmanager.com/
                 https://*.cloudflareinsights.com/;
     frame-src 'none';
     object-src 'none';
     base-uri 'self';
-    form-action 'self'; 
+    form-action 'self'
+                https://rentrovio-core-417144417802.asia-south2.run.app/; 
     upgrade-insecure-requests;
     block-all-mixed-content;
 "
