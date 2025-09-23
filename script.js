@@ -113,7 +113,7 @@ RentrovioLanding.HeaderComponent = {
     console.log("Header component elements:", {
       header: this.elements.header,
       mobileToggle: this.elements.mobileToggle,
-      navigation: this.elements.navigation
+      navigation: this.elements.navigation,
     });
   },
 
@@ -138,7 +138,7 @@ RentrovioLanding.HeaderComponent = {
     } else {
       console.error("Mobile toggle or navigation element not found", {
         mobileToggle: this.elements.mobileToggle,
-        navigation: this.elements.navigation
+        navigation: this.elements.navigation,
       });
     }
 
@@ -301,61 +301,62 @@ RentrovioLanding.BetaSignupComponent = {
     this.updateSubmitButton("Joining...", true);
 
     // Call the waitlist API
-    fetch('https://rentrovio-core-417144417802.asia-south2.run.app/v1/helpdesk/waitlist', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: email
-      })
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    fetch(
+      "https://rentrovio-core-417144417802.asia-south2.run.app/v1/helpdesk/waitlist",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+        }),
       }
-      return response.json();
-    })
-    .then(data => {
-      // Add to subscribers for local tracking
-      RentrovioLanding.state.subscribers.push(email);
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Add to subscribers for local tracking
+        RentrovioLanding.state.subscribers.push(email);
 
-      // Save to localStorage
-      localStorage.setItem(
-        "rentrovio_waitlist",
-        JSON.stringify(RentrovioLanding.state.subscribers)
-      );
+        // Save to localStorage
+        localStorage.setItem(
+          "rentrovio_waitlist",
+          JSON.stringify(RentrovioLanding.state.subscribers)
+        );
 
-      // Update UI
-      this.showNotification(
-        "🎉 Welcome to the waitlist! We'll notify you when we launch.",
-        "success"
-      );
-      this.elements.emailInput.value = "";
+        // Update UI
+        this.showNotification(
+          "🎉 Welcome to the waitlist! We'll notify you when we launch.",
+          "success"
+        );
+        this.elements.emailInput.value = "";
 
-      // Reset button
-      RentrovioLanding.state.isSubmitting = false;
-      this.updateSubmitButton("Join Waitlist", false);
+        // Reset button
+        RentrovioLanding.state.isSubmitting = false;
+        this.updateSubmitButton("Join Waitlist", false);
 
-      // Track signup (analytics would go here)
-      this.trackSignup(email);
-    })
-    .catch(error => {
-      console.error('Error submitting to waitlist:', error);
-      
-      // Reset button
-      RentrovioLanding.state.isSubmitting = false;
-      this.updateSubmitButton("Join Waitlist", false);
-      
-      // Show error notification
-      this.showNotification(
-        "Sorry, there was an error joining the waitlist. Please try again.",
-        "error"
-      );
-    });
+        // Track signup (analytics would go here)
+        this.trackSignup(email);
+      })
+      .catch((error) => {
+        console.error("Error submitting to waitlist:", error);
+
+        // Reset button
+        RentrovioLanding.state.isSubmitting = false;
+        this.updateSubmitButton("Join Waitlist", false);
+
+        // Show error notification
+        this.showNotification(
+          "Sorry, there was an error joining the waitlist. Please try again.",
+          "error"
+        );
+      });
   },
-
-
 
   isValidEmail: function (email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -506,8 +507,6 @@ RentrovioLanding.ContactFormComponent = {
     }
   },
 
-
-
   handleSubmit: function (e) {
     e.preventDefault();
 
@@ -641,13 +640,13 @@ RentrovioLanding.ContactFormComponent = {
     this.setSubmitState(true);
 
     const formData = this.getFormData();
-    
+
     // Map user type to role number (based on your API example)
     const roleMap = {
-      'landlord': 0,
-      'tenant': 1,
-      'caretaker': 2,
-      'not-specified': 3
+      landlord: 0,
+      tenant: 1,
+      caretaker: 2,
+      "not-specified": 3,
     };
 
     const contactData = {
@@ -655,31 +654,34 @@ RentrovioLanding.ContactFormComponent = {
       full_name: formData.name,
       message: formData.message,
       role: roleMap[formData.userType] || 0,
-      subject: formData.subject
+      subject: formData.subject,
     };
 
     // Call the contact API
-    fetch('https://rentrovio-core-417144417802.asia-south2.run.app/v1/helpdesk/contactus', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(contactData)
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    fetch(
+      "https://rentrovio-core-417144417802.asia-south2.run.app/v1/helpdesk/contactus",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
       }
-      return response.json();
-    })
-    .then(data => {
-      console.log("Contact form submitted successfully:", data);
-      this.onEmailSuccess(formData);
-    })
-    .catch(error => {
-      console.error("Contact form submission failed:", error);
-      this.onEmailError(error);
-    });
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Contact form submitted successfully:", data);
+        this.onEmailSuccess(formData);
+      })
+      .catch((error) => {
+        console.error("Contact form submission failed:", error);
+        this.onEmailError(error);
+      });
   },
 
   getFormData: function () {
@@ -927,7 +929,8 @@ RentrovioLanding.UserRolesComponent = {
       navTabs.innerHTML = roleData.tabs
         .map(
           (tab, index) =>
-            `<span class="nav-tab ${index === 0 ? "nav-tab--active" : ""
+            `<span class="nav-tab ${
+              index === 0 ? "nav-tab--active" : ""
             }">${tab}</span>`
         )
         .join("");
@@ -946,56 +949,25 @@ RentrovioLanding.UserRolesComponent = {
 // Pricing Component
 RentrovioLanding.PricingComponent = {
   init: function () {
-    this.setupComingSoonEffects();
+    this.setupGeoIPPricing();
   },
 
-  setupComingSoonEffects: function () {
-    const pricingButton = document.querySelector(".pricing-card__button");
+  setupGeoIPPricing: function () {
+    const priceElement = document.querySelector(".pricing-card__amount");
+    if (!priceElement) return;
 
-    if (pricingButton) {
-      // Add click handler regardless of disabled state
-      pricingButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        const emailInput = document.getElementById("emailInput");
-        if (emailInput) {
-          emailInput.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-          });
-          setTimeout(() => {
-            emailInput.focus();
-          }, 500);
+    fetch(
+      "https://api.geoapify.com/v1/ipinfo?apiKey=410f953767ac495496ba63cbf48bdb9b"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.country && data.country.iso_code === "IN") {
+          priceElement.textContent = "₹999";
         }
+      })
+      .catch((error) => {
+        console.warn("GeoIP API error:", error);
       });
-
-      // Add hover effect
-      const pricingCard = document.querySelector(".pricing-card");
-      if (pricingCard) {
-        pricingCard.addEventListener("mouseenter", () => {
-          pricingButton.style.transform = "scale(1.02)";
-        });
-
-        pricingCard.addEventListener("mouseleave", () => {
-          pricingButton.style.transform = "scale(1)";
-        });
-      }
-    }
-  },
-
-  animatePrice: function (element, targetPrice) {
-    let currentPrice = 0;
-    const increment = targetPrice / 20;
-    const duration = 1000;
-    const intervalTime = duration / 20;
-
-    const timer = setInterval(() => {
-      currentPrice += increment;
-      if (currentPrice >= targetPrice) {
-        currentPrice = targetPrice;
-        clearInterval(timer);
-      }
-      element.textContent = `$${Math.floor(currentPrice)}`;
-    }, intervalTime);
   },
 };
 
@@ -1010,17 +982,25 @@ RentrovioLanding.PrefetchComponent = {
 
   setupHoverPrefetch: function () {
     // Use event delegation for better performance
-    document.addEventListener('mouseenter', (e) => {
-      if (e.target.tagName === 'A' && e.target.href) {
-        this.handleLinkHover(e.target);
-      }
-    }, true);
+    document.addEventListener(
+      "mouseenter",
+      (e) => {
+        if (e.target.tagName === "A" && e.target.href) {
+          this.handleLinkHover(e.target);
+        }
+      },
+      true
+    );
 
-    document.addEventListener('mouseleave', (e) => {
-      if (e.target.tagName === 'A' && e.target.href) {
-        this.handleLinkLeave(e.target);
-      }
-    }, true);
+    document.addEventListener(
+      "mouseleave",
+      (e) => {
+        if (e.target.tagName === "A" && e.target.href) {
+          this.handleLinkLeave(e.target);
+        }
+      },
+      true
+    );
   },
 
   handleLinkHover: function (link) {
@@ -1032,16 +1012,16 @@ RentrovioLanding.PrefetchComponent = {
     }
 
     // Add visual indicator class
-    link.classList.add('prefetch-indicator');
+    link.classList.add("prefetch-indicator");
 
     // Add small delay to avoid prefetching on quick mouse movements
     const prefetchTimeout = setTimeout(() => {
-      link.classList.add('prefetching');
+      link.classList.add("prefetching");
       this.prefetchUrlCloudflare(url);
 
       // Remove visual indicator after prefetch starts
       setTimeout(() => {
-        link.classList.remove('prefetching');
+        link.classList.remove("prefetching");
       }, 1000);
     }, 100);
 
@@ -1057,7 +1037,7 @@ RentrovioLanding.PrefetchComponent = {
     }
 
     // Remove visual indicators
-    link.classList.remove('prefetch-indicator', 'prefetching');
+    link.classList.remove("prefetch-indicator", "prefetching");
   },
 
   shouldPrefetch: function (url) {
@@ -1081,7 +1061,7 @@ RentrovioLanding.PrefetchComponent = {
       }
 
       // Skip mailto, tel, and other non-http protocols
-      if (!linkUrl.protocol.startsWith('http')) {
+      if (!linkUrl.protocol.startsWith("http")) {
         return false;
       }
 
@@ -1146,22 +1126,22 @@ RentrovioLanding.PrefetchComponent = {
     this.prefetchedUrls.add(url);
 
     // Skip HEAD request check for Cloudflare - just try to prefetch
-    const prefetchLink = document.createElement('link');
-    prefetchLink.rel = 'prefetch';
+    const prefetchLink = document.createElement("link");
+    prefetchLink.rel = "prefetch";
     prefetchLink.href = url;
-    prefetchLink.as = 'document';
+    prefetchLink.as = "document";
 
     // Add Cloudflare-friendly attributes
-    prefetchLink.crossOrigin = 'anonymous';
+    prefetchLink.crossOrigin = "anonymous";
 
     // Add error handling
     prefetchLink.onerror = () => {
-      console.warn('Cloudflare prefetch failed for:', url);
+      console.warn("Cloudflare prefetch failed for:", url);
       this.cleanupPrefetch(url);
     };
 
     prefetchLink.onload = () => {
-      console.log('Successfully prefetched via Cloudflare:', url);
+      console.log("Successfully prefetched via Cloudflare:", url);
     };
 
     // Add to head
@@ -1221,7 +1201,7 @@ RentrovioLanding.Utils = {
       rect.top >= 0 &&
       rect.left >= 0 &&
       rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
+        (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   },
