@@ -957,7 +957,12 @@ RentrovioLanding.PricingComponent = {
     if (!priceElement) return;
 
     fetch(
-      "https://api.geoapify.com/v1/ipinfo?apiKey=410f953767ac495496ba63cbf48bdb9b"
+      "https://api.geoapify.com/v1/ipinfo?apiKey=410f953767ac495496ba63cbf48bdb9b",
+      {
+        headers: {
+          Accept: "application/json",
+        },
+      }
     )
       .then((response) => response.json())
       .then((data) => {
@@ -1077,7 +1082,6 @@ RentrovioLanding.PrefetchComponent = {
     }
   },
 
-  // prefetchUrl: function (url) {
   //   // Mark as prefetched
   //   this.prefetchedUrls.add(url);
 
@@ -1122,19 +1126,13 @@ RentrovioLanding.PrefetchComponent = {
 
   // Cloudflare-compatible prefetch method
   prefetchUrlCloudflare: function (url) {
-    // Mark as prefetched
     this.prefetchedUrls.add(url);
-
-    // Skip HEAD request check for Cloudflare - just try to prefetch
     const prefetchLink = document.createElement("link");
     prefetchLink.rel = "prefetch";
     prefetchLink.href = url;
     prefetchLink.as = "document";
-
-    // Add Cloudflare-friendly attributes
     prefetchLink.crossOrigin = "anonymous";
 
-    // Add error handling
     prefetchLink.onerror = () => {
       console.warn("Cloudflare prefetch failed for:", url);
       this.cleanupPrefetch(url);
@@ -1144,13 +1142,8 @@ RentrovioLanding.PrefetchComponent = {
       console.log("Successfully prefetched via Cloudflare:", url);
     };
 
-    // Add to head
     document.head.appendChild(prefetchLink);
-
-    // Store reference for cleanup
     this.prefetchElements.set(url, prefetchLink);
-
-    // Clean up after shorter time for Cloudflare
     setTimeout(() => {
       this.cleanupPrefetch(url);
     }, 60000); // Clean up after 60 seconds
