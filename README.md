@@ -34,7 +34,7 @@ This landing page showcases the multi-role capabilities of the Rentrovio platfor
 
 ```
 rentrovio-landing/
-├── index.html              # Main landing page
+├── index              # Main landing page
 ├── styles.min.css              # Main stylesheet with CSS custom properties
 ├── script.min.js               # Interactive JavaScript functionality
 ├── assets/
@@ -75,7 +75,7 @@ rentrovio-landing/
 
 ## 🚀 Getting Started
 
-1. Open `index.html` in any modern web browser
+1. Open `index` in any modern web browser
 2. The page is fully self-contained with no external dependencies
 3. All assets and scripts are included locally
 
@@ -129,7 +129,7 @@ Update CSS custom properties in `styles.min.css` under the `:root` selector.
 
 ### Content
 
-Modify text content directly in `index.html` or update the JavaScript data objects in `script.min.js` for dynamic content.
+Modify text content directly in `index` or update the JavaScript data objects in `script.min.js` for dynamic content.
 
 ### Features
 
